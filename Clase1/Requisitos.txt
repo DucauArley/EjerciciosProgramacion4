@@ -1,0 +1,33 @@
+Framework, para typescript que permite utilizacion de varios metodos, etc
+La arquitectura es de angular. 
+Codigo logico en typescript, angular pasa todo a javascript, creo que tambien combina a html y css
+Angular cli, para bajar las bibliotecas
+Creo que se puede usar sublime text pero en visual code se hace mas comodo
+Para instalar angular cli npm install -g @angular/cli
+Para crear el proyecto ng new pero lo tengo que abrir en la terminal del visual code, no me salio con el git bash
+Con cd para meterse a carpetas, como en ubuntu
+ng serve --open para que abra las paginas
+Para crear componentes hay que ejecutar este comando ng g component componentes/bienvenido
+En la src esta el proyecto en si
+En app se van a ir creando cosas
+Para crear clases ng g class clases/usuario
+El modulo define todo lo que vamos a utilizar en la aplicacion
+Conceptualmente esto es inyeccion de codigo
+Servicios encargados de devolver o enviar datos. EL servicio se instancia al crear cada uno de los componentes
+ng generate module app-routing --flat --module=app
+Para entrar a los path de los components hay que hacer cosas como en postman ej /inicio
+Buscar en el git de octavio sala de juegos
+Desarrollar juego propio, no se puede repetir
+Cambiar toda la interfaz de usuario
+Hacer un fork del trabajo practico, hacerlo en angular, correrlo y cambiar las fotos, las formas de los menues/botones/textos
+/pantallas, etc.
+Hay que traer parte de la sala de juego durante el transcurso de las semanas
+Hay que hacer perfiles en acerca de o algo asi
+Hay que hacer un distribuible para subirlo a la web, no tengo ni idea como pija hacer
+Para practica profesional, se instala ionic, que trabaja con angular, todos los modulos y demas que hagamos aca, son parecidas
+en ionic y se pueden usar tambien
+Instalar firebase para guardar datos, es compatible con aplicaciones de android studio
+angularfi2 para usar angular en firebase o al revez
+26/9 Entrega del tp
+Tutorial de angular, tur de los heroes
+Tutorial de firebase tambien hay que hacer

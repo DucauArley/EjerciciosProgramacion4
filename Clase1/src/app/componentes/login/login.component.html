@@ -1,0 +1,18 @@
+<h1>Login</h1>
+    Ingresar email<br>
+    <input type="text" id="email" [(ngModel)]="usuario.nombre"><br><br>
+    Ingresar contraseña<br>
+    <input type="text" id="clave" [(ngModel)]="usuario.clave"><br><br>
+    <button (click)="Ingresar()">Ingresar</button>
+
+    <div *ngIf="ingresado"><!--ngIf crea el componente es un if ingresado == true-->
+    <p>{{usuario.nombre}}</p><!-- Esto te lo muestra en la pantalla es de
+    typescript -->
+    <p>{{usuario.clave}}</p>
+  </div>
+
+  <div [hidden]="!ingresado"><!--hidden es-->
+    <p>{{usuario.nombre}}</p><!-- Esto te lo muestra en la pantalla es de
+    typescript -->
+    <p>{{usuario.clave}}</p>
+  </div>
