@@ -1,0 +1,11 @@
+Presentacion en dispositivo movil, creo que no se presenta el codigo
+Primer parcial, entrega de 5 aplicaciones minimo, si hacemos mas, hay mas nota
+segundo parcial, grupo de 3 personas para el tp
+Para el final se le agregan cosas al tp
+Vamos a tener que usar ionic->ionicfraework.com, firebase y android studio
+we, en ionic esta todo, no pienso subir un carajo a git
+Para la semana que viene, hacer app en el celu que tenga 2 paginas con las cuales pueda
+interactuar, la primera tiene que tener un login con un cuadro de txt para mail, otro
+para contraseña y los botones aceptar/cancelar, el login debe guardar info de correo y
+contraseña en local storage o mejor si se conecta en firebase
+la otra pagina puede tener cualquier cosa
