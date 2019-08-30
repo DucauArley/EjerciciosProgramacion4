@@ -11,7 +11,8 @@ Dentro del html del componente usuario se incluye el componente listado
 unir el listado de usuarios hardcodeado con los usuarios nuevos que vamos creando igual que en el tour of heroes
 En el listado de usuarios se le tiene que pasar un array, se independisa de quien lo manda por el html
 <app_Listado_De_usuario "[Lista]="Usuarios" >
-Para parsear atributos a html se pone @input adelante
+Para parsear atributos a html se pone @input() Lista adelante
+Hacer lo mismo que antes pero con una grilla <App_grilla>
 Parece que necesito angular CLI 8.3.1 y node 12.9.1
 
 Para cambiar la version en el package.json o version global igula que la del proyecto
