@@ -1,0 +1,21 @@
+Hacer un componente Lista de usuarios
+En usuario das de alta el usuario y lo agregas al array
+En la clase usuarios, hacer un array en el constructor e instanciar 3 usuarios
+<div *ngfor="let user of ListaDeUsuarios"> 
+<p{{user.name}}>
+</div>
+Debe haber dos textos y un boton, cada vez que se toque el boton se debe crear un nuevo usuario y agregar a la lista
+Osea basicamente hacer lo mismo que en el tour de los heroes pero con usuarios
+Una vez listo el listado, en el componente usuario, agregar abajo el componente listado
+Dentro del html del componente usuario se incluye el componente listado
+unir el listado de usuarios hardcodeado con los usuarios nuevos que vamos creando igual que en el tour of heroes
+En el listado de usuarios se le tiene que pasar un array, se independisa de quien lo manda por el html
+<app_Listado_De_usuario "[Lista]="Usuarios" >
+Para parsear atributos a html se pone @input adelante
+Parece que necesito angular CLI 8.3.1 y node 12.9.1
+
+Para cambiar la version en el package.json o version global igula que la del proyecto
+
+ncu -u --packageFile package.json
+
+npm install
