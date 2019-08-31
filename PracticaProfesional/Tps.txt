@@ -3,3 +3,12 @@ Buscar formatos psd para cambiar el icono
 Editar los psd con photopea.com y lo bajo con extencion png tanto para el icono como el splashscreen
 (192*192)icono (2208*2208)splash
 Hay que buscarlas en paginas especiales, ya que si las guardas desde google te las guarda como jpg
+Hacer 5 applicaciones que convivan en el dispositivo, rip mi celu, tienen que se distintos los logins de las 5
+distintos inputs, fuentes, botones, formatos, etc, La funcionalidad es la misma con firebase
+5 iconos distintos con 5 splash distintos, si bien van a ser distintos entre si, no deben tener tantas diferencias
+para saber que pertenecen al mismo conjunto de aplicaciones cada icono relacionado con un splash
+Para el splash ademas de tener las mismas caracteristicas del icono, tiene que tener apellido, nombre y division para que
+nadie robe, (Pellita)
+Apps para el primer parcial
+Sabado 5 de octubre ultima clase antes del parcial
+19 de octubre sabado del parcial, sabado 12 es el dia de la raza asique no hay clases
