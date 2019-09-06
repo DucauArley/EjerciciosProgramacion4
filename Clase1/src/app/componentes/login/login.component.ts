@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor()
   {
-    this.usuario = new Usuario();
+    this.usuario = new Usuario('pepe', 'secreto');
     this.usuario.nombre = 'Pepe';
     this.usuario.clave = 'secreto';
 

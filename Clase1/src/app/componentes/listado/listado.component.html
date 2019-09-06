@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Contraseña</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+    <tr *ngFor="let usuario of Usuarios" >
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.clave}}</td>
+        <td><button (click)="Editar(usuario)">Editar</button></td>
+        <td><button (click)="Borrar(usuario)">Borrar</button></td>
+    </tr>
+</table>
