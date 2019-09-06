@@ -1,0 +1,13 @@
+Ionic es angular mas las bibliotecas de android
+Usuario se encarga de que cuando yo le doy aceptar le doy alta
+UsuarioListado decide si es alta, baja, etc. Tiene un array local cuando toco el boton en usuario, se ejecuta una funcion
+en usuarioListado, el evento tiene que estar definido en usuario
+Listado muestra depende lo que decida UsuarioListado lo hace automaticamente. no tiene logica
+con @input se pasan los datos entre componentes
+En el html se clickea el boton, este llama a una funcion de UsuarioListado <button (click)="hacerAlgo($Event)">
+Se le pasa un objeto usuario
+tendria que hacer <app_usuario (seCreo) = "hacerAlgo($event)">
+<app_listado [  ] = array
+@output se importa al usuario con un eventemiter
+seCreo es un evento de tipo any
+Modificar los usuarios de la lista
