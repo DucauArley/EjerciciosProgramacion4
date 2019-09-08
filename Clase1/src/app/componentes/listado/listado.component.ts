@@ -17,11 +17,13 @@ export class ListadoComponent implements OnInit {
   ngOnInit() {
   }
 
-  Editar(usuario: Usuario) {
+  Editar(usuario: Usuario)
+  {
     this.editarUsuario.emit(usuario);
   }
 
-  Borrar(usuario: Usuario) {
+  Borrar(usuario: Usuario)
+  {
     this.borrarUsuario.emit(usuario);
   }
 

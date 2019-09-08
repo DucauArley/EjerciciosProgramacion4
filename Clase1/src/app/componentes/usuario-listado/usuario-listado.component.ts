@@ -1,5 +1,6 @@
 import { Usuario } from './../../clases/usuario';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UsuarioComponent } from '../usuario/usuario.component';
 
 @Component({
   selector: 'app-usuario-listado',
@@ -20,6 +21,13 @@ export class UsuarioListadoComponent implements OnInit {
     this.listaUsuarios.push($event);
   }
 
+  @ViewChild(UsuarioComponent, {static: false}) usuario :UsuarioComponent;
+
+  BorrarUsuario(usuario: Usuario)
+  {
+    const index = this.listaUsuarios.indexOf(usuario);
+    this.listaUsuarios.splice(index, 1);
+  }
 
   ngOnInit() {
   }

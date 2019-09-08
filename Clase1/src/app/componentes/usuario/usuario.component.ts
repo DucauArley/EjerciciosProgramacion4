@@ -1,5 +1,5 @@
 import { Usuario } from './../../clases/usuario';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
@@ -10,6 +10,9 @@ export class UsuarioComponent implements OnInit {
 
   public nombre: string;
   public clave: string;
+  public usuario: Usuario;
+  public usuarioEditar: Usuario;
+  public editar: boolean = false;
 
   @Output() seCreo: EventEmitter<any> = new EventEmitter<any>();
 
@@ -23,14 +26,14 @@ export class UsuarioComponent implements OnInit {
     this.seCreo.emit(usuario);
   }
 
-  editarUsuario()
+  EditarUsuario(usuario: Usuario)
   {
-
-  }
-
-  borrarUsuario()
-  {
-
+    console.info("Funca");
+    this.usuarioEditar = new Usuario(usuario.nombre, usuario.clave);
+    this.nombre = this.usuarioEditar.nombre;
+    this.clave = this.usuarioEditar.clave;
+    this.usuario = usuario;
+    this.editar = true;
   }
 
 }
