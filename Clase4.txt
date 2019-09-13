@@ -1,0 +1,17 @@
+Concepto de servicios, independisa la fuente de datos de los componentes que interactuan con esos datos
+Hacemos metodos que interactuan con fuentes de datos, se terminan dividiendo en bastantes capas
+no se puede hacer mas de una llamada a un servicio
+El servicio conecta a la api siempre, otro que usa el servicio esta que le diga que quiero de la api
+los servicios atomizan las funcionalidades
+hacer api rest con post/gets que le peguen a la api
+el logeo por ejemplo necesita hacer un alta y un login, para asi con la app le pego con el servicio
+2 servidores andando, hay que aplicar corse habilitarlo en el chrome
+se comunica el servidor de angular con el de apache osea todos los puertos del 4200 al 8080
+los datos pueden estar en base de datos, documentos, api, firebase un servicio para traer datos de cada cosa
+servicios especializados ej para traer productos, consumen datos de los otros servicios
+rest countries es una api no se para que devuelve el listado de paises, un json, hay que tomarlo y mostrarlo con un ngFor
+lo ideal es que no sepa como me conecte, hacer 2 servicios uno que le diga lo que quiero que me devuelva y el otro para
+que le pegue al rest countries
+the moviedb.org da un api key con get creo que te devuelve el listado de peliculas con fotos de la portada
+Habria que hacer la comanda pero ni en pedo
+ng g s servicios/mihttp

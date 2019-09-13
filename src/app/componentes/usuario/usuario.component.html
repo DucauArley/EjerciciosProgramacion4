@@ -4,3 +4,5 @@
     Ingresar clave <br>
     <input type="text" id="clave" [(ngModel)]="clave"><br><br>
     <button (click)="agregarUsuario()">Agregar Usuario</button>
+    <button (click)="guardarEditar()" *ngIf="editar">Guardar</button>
+    <button (click)="cancelarEditar()" *ngIf="editar">Cancelar</button>

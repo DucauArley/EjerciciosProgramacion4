@@ -1,2 +1,2 @@
-<app-usuario (seCreo) = "hacerAlgo($event)"></app-usuario>
+<app-usuario (seCreo) = "hacerAlgo($event)"  [Usuarios]= "listaUsuarios"></app-usuario>
 <app-listado [Usuarios] = "listaUsuarios" (editarUsuario) = "usuario.EditarUsuario($event)" (borrarUsuario) = "BorrarUsuario($event)"></app-listado>
