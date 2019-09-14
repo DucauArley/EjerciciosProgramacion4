@@ -1,7 +1,7 @@
 Hay que empezar a darle formato a los iconos de las apps, hay que cambiar el icono de ionic y el spashscreen
 Buscar formatos psd para cambiar el icono
 Editar los psd con photopea.com y lo bajo con extencion png tanto para el icono como el splashscreen
-(192*192)icono (2208*2208)splash
+(1024*1024)icono (2732*2732)splash
 Hay que buscarlas en paginas especiales, ya que si las guardas desde google te las guarda como jpg
 Hacer 5 applicaciones que convivan en el dispositivo, rip mi celu, tienen que se distintos los logins de las 5
 distintos inputs, fuentes, botones, formatos, etc, La funcionalidad es la misma con firebase
