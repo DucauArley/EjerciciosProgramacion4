@@ -9,6 +9,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { ListadoComponent } from './componentes/listado/listado.component';
 import { UsuarioListadoComponent } from './componentes/usuario-listado/usuario-listado.component';
+import { PaisesComponent } from './componentes/paises/paises.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { MihttpService } from './servicios/mihttp/mihttp.service';
+import { PaisesService } from './servicios/paises/paises.service';
 
 @NgModule({
   declarations: [
@@ -17,15 +22,17 @@ import { UsuarioListadoComponent } from './componentes/usuario-listado/usuario-l
     LoginComponent,
     UsuarioComponent,
     UsuarioListadoComponent,
-    ListadoComponent
+    ListadoComponent,
+    PaisesComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PaisesService, MihttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

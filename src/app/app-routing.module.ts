@@ -6,10 +6,13 @@ import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Routes, RouterModule } from '@angular/router';
 import { UsuarioListadoComponent } from './componentes/usuario-listado/usuario-listado.component';
+import { PaisesComponent } from './componentes/paises/paises.component';
+
 
 const routes: Routes = [{path: 'inicio', component: BienvenidoComponent},
 {path: 'login', component: LoginComponent},
-{path: '', component: UsuarioListadoComponent}];
+{path: '', component: UsuarioListadoComponent},
+{ path: 'paises', component: PaisesComponent }];
 
 @NgModule({
   declarations: [],
