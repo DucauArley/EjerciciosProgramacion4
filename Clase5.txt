@@ -3,3 +3,5 @@ bounce es para animaciones, se puede hacer las navegaciones con esto
 cuando se hace click a un boton y se despliega un menu es una animacion
 se hace un componente para estandarisar los menues, con la animacion, etc
 Hacer el salto de animacion del login al bienvenido
+hacer api rest usuario y demas con http get, post, put, delete
+hacerla local para usarla con xampp porque puede que tengamos problemas con el cors
