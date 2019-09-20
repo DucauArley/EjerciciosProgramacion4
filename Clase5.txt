@@ -1,0 +1,5 @@
+Si quiero crear una tabla, necesito un componente fila, otro columna, etc
+bounce es para animaciones, se puede hacer las navegaciones con esto
+cuando se hace click a un boton y se despliega un menu es una animacion
+se hace un componente para estandarisar los menues, con la animacion, etc
+Hacer el salto de animacion del login al bienvenido

@@ -1,3 +1,4 @@
+import { animation } from '@angular/animations';
 import { Usuario } from './clases/usuario';
 import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
@@ -7,10 +8,10 @@ import { CommonModule } from '@angular/common';
 import {Routes, RouterModule } from '@angular/router';
 import { UsuarioListadoComponent } from './componentes/usuario-listado/usuario-listado.component';
 import { PaisesComponent } from './componentes/paises/paises.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-const routes: Routes = [{path: 'inicio', component: BienvenidoComponent},
-{path: 'login', component: LoginComponent},
+const routes: Routes = [{path: 'inicio', component: BienvenidoComponent, data: {animation: 'bienvenidopage'}},
+{path: 'login', component: LoginComponent, data: {animation: 'loginpage'}},
 {path: '', component: UsuarioListadoComponent},
 { path: 'paises', component: PaisesComponent }];
 
