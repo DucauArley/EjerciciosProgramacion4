@@ -1,0 +1,7 @@
+Basicamente hay que remodelar la api del segundo parcial del 3er cuatrimestre para que acepte lo que sea que me pida
+el enunciado, en este caso creo que es un producto, a esta api la llamo desde el ts del parcial con el
+http.get(localhost:8080/la ruta de los metodos) o post o lo que sea para asi use la api como intermediario
+hay que hacer la tabla de lo que sea en php my admin, supongo que vamos a tener que tener el apache prendido
+NG2_file.upload se le pasa el archivo para copiar la ruta de la imagen o una cosa asi
+copiar los imports y demas
+crea su propio componente y sube tu archivo o algo asi
