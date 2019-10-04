@@ -1,0 +1,21 @@
+
+<h1>PELICULAS</h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Tipo</th>
+    <th>FechaEstreno</th>
+    <th>CantidadPublico</th>
+    <th>FotoPelicula</th>
+  </tr>
+  <tr *ngFor="let peli of paises" >
+      <td>{{peli.id}}</td>
+      <td>{{peli.nombre}}</td>
+      <td>{{peli.tipo}}</td>
+      <td>{{peli.fechaEstreno}}</td>
+      <td>{{peli.cantidadPublico}}</td>
+      <td>{{peli.fotoPelicula}}</td>
+  </tr>
+
+</table>
