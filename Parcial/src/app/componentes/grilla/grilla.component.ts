@@ -10,16 +10,21 @@ import { PeliculasService } from './../../servicios/peliculas.service';
 })
 export class GrillaComponent implements OnInit {
 
-  constructor(private paisesService: PeliculasService)
+  constructor(private peliculasService: PeliculasService)
   {
 
   }
 
-  public paises = [];
+  public peliculas = [];
 
   ngOnInit()
   {
-    this.paisesService.BuscarTodos().subscribe(element => this.paises = element);
+    this.peliculasService.BuscarTodos().subscribe(element => this.peliculas = element);
+  }
+
+  refrescarGrilla(pelis) 
+  {
+    this.peliculas = pelis;
   }
 
 }

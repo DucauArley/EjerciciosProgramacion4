@@ -7,7 +7,7 @@ import {Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [{path: 'grilla', component: GrillaComponent,},
-{path: 'home', component: GrillaComponent}];
+{path: '', component: GrillaComponent}];
 
 @NgModule({
   declarations: [],

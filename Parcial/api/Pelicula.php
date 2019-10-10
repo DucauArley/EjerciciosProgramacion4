@@ -88,6 +88,17 @@
 	        return $consulta->execute();
 	    }
 
+		public static function EliminarPelicula()
+	    {
+	        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
+	        
+	        $consulta =$objetoAccesoDato->RetornarConsulta("DELETE FROM peliculas WHERE id = :id");
+	        
+	        $consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
+	        return $consulta->execute();
+	    }
+
+
 
 	}
 

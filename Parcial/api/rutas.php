@@ -26,12 +26,24 @@
 			}
 		}
 
+		public function eliminarPelicula($request, $response)
+		{
+			try
+			{
+				$pelicula = new Pelicula();
+				$pelicula->id = $arg["id"];
+				$pelicula->EliminarPelicula();
+
+			}
+			catch(Exception $e)
+			{
+				throw new Exception($e);
+			}
+		}
+
 		public function HabilitarCORSTodos($request, $response, $next) {
-			/*
-			al ingresar no hago nada
-		  */
+			
 		  $response = $next($request, $response);
-			//solo afecto la salida con los header
 			// $response->getBody()->write('<p>habilitado HabilitarCORSTodos</p>');
 			
 				return $response

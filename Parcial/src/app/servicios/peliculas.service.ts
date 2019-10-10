@@ -15,6 +15,11 @@ export class PeliculasService {
 
   BuscarTodos()
   {
-    return this.miHttp.httpGetO('peliculas');
+    return this.miHttp.httpGet('peliculas');
+  }
+
+  Borrar(id: number)
+  {
+    return this.miHttp.httpPost('borrarPelicula' + id);
   }
 }

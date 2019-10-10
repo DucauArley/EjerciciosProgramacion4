@@ -1,9 +1,9 @@
 {
     "require": 
     {
-      "slim/slim": "*",
+      "slim/slim": "^3.12",
       "illuminate/database": "*",
-      "firebase/php-jwt": "*"
+      "firebase/php-jwt": "^5.0"
     },
     "autoload":
     {

@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MihttpService } from './servicios/mihttp.service';
 import {PeliculasService } from './servicios/peliculas.service';
+import { BotonComponent } from './componentes/boton/boton.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GrillaComponent
+    GrillaComponent,
+    BotonComponent
   ],
 
   imports: [
