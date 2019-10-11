@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from './../../servicios/peliculas.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-grilla',
@@ -22,9 +23,14 @@ export class GrillaComponent implements OnInit {
     this.peliculasService.BuscarTodos().subscribe(element => this.peliculas = element);
   }
 
-  refrescarGrilla(pelis) 
+  refrescarGrilla(pelis)
   {
     this.peliculas = pelis;
+  }
+
+  AltaPelicula()
+  {
+    this.peliculasService.Alta(null).subscribe(element => console.log(element));
   }
 
 }
