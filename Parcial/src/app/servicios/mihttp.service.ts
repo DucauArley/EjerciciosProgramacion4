@@ -12,10 +12,9 @@ export class MihttpService {
 
   }
 
-  private httpOptions = {
-    headers: new HttpHeaders({
-    'Content-Type': 'application/x-www-form-urlencoded' })
-  };
+  private httpOptions =  new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+
+
 
   private url = 'http://localhost:80/api/';
 
@@ -27,7 +26,7 @@ export class MihttpService {
 
   public httpPost(metodo: string, body: any): Observable<any>
   {
-    return this.http.post(this.url + metodo, body, this.httpOptions)
+    return this.http.post(this.url + metodo, body, {headers: this.httpOptions})
     .pipe(res=>res);
   }
 

@@ -26,7 +26,7 @@
 			}
 		}
 
-		public function eliminarPelicula($request, $response)
+		public function eliminarPelicula($request, $response, $arg)
 		{
 			try
 			{
@@ -34,6 +34,7 @@
 				$pelicula->id = $arg["id"];
 				$pelicula->EliminarPelicula();
 
+				return $response;
 			}
 			catch(Exception $e)
 			{
@@ -91,37 +92,25 @@
 		    }
 		}
 
-		public static function crearMateria($request, $response)
+		public static function altaPelicula($request, $response)
 		{
 			try
 			{
-				$arrayToken = $request->getHeader('token');
-			    $token = $arrayToken[0];
-		    
-			    if(empty($token) || $token === "")
-			    {
-			    	echo "Error";
-			    }
-				    
-		    	$tokenDeco = JWT::decode($token, "claveloide",['HS256'])->data;
-
 				$datos = $request->getParsedBody();
 
-				if($tokenDeco->tipo == "admin")
-				{
-				    $materia = new Materia();
-				    $materia->nombre = $datos["nombre"];
-				    $materia->cuatrimestre = $datos["cuatrimestre"];
-				    $materia->cupos = $datos["cupos"];
+				$pelicula = new Pelicula();
 
-				    $materia->AltaMateria();
+				$pelicula->id = $datos["id"];
+				$pelicula->nombre = $datos["nombre"];
+				$pelicula->tipo = $datos["tipo"];
+				$pelicula->fechaEstreno = $datos["FechaEstreno"];
+				$pelicula->cantidadPublico = $datos["CantidadPublico"];
+				$pelicula->fotoPelicula = $datos["FotoPelicula"];
 
-				    echo "Insercion exitosa!";
-				}
-				else
-				{
-					echo "No es administrador";
-				}
+				$pelicula->AltaPelicula();
+
+				return $response;
+
 			}
 			catch(Exception $e)
 			{

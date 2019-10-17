@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MihttpService } from './mihttp.service';
-import { HttpParams } from '@angular/common/http';
+import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { parseTemplate } from '@angular/compiler';
 import { Pelicula } from '../clases/pelicula';
 
@@ -30,13 +30,14 @@ export class PeliculasService {
   {
     const obj = {id: 2, nombre: 'Chucky',
     tipo: 'Terror', FechaEstreno: '20/1/1985', CantidadPublico: 50000, FotoPelicula: 'url'};
-    const params = new HttpParams();
-    params.set('id', '2');
-    params.set('nombre', 'chucky');
-    params.set('tipo', 'terror');
-    params.set('FechaEstreno', '20/10/1986');
-    params.set('CantidadPublico', '50000');
-    params.set('FotoPelicula', 'chucky');
+
+    let params = new HttpParams();
+    params = params.set('id', '2');
+    params = params.set('nombre', 'chucky');
+    params = params.set('tipo', 'terror');
+    params = params.set('FechaEstreno', '20/10/1986');
+    params = params.set('CantidadPublico', '50000');
+    params = params.set('FotoPelicula', 'chucky');
 
     const pelicula = new Pelicula();
 
@@ -47,9 +48,10 @@ export class PeliculasService {
     pelicula.CantidadPublico = 50000;
     pelicula.FotoPelicula = 'url';
 
-    let asd = JSON.stringify(pelicula);
-    let asd2 = JSON.parse(asd);
+    /*let asd = JSON.stringify(pelicula);
+    let asd2 = JSON.parse(asd);*/
 
-    return this.miHttp.httpPost('altaPelicula', asd2);
+    return this.miHttp.httpPost('altaPelicula', params);
   }
+
 }

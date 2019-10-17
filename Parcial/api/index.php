@@ -17,9 +17,9 @@
 
 	$app->get('/peliculas', \rutas::class . ':traerPeliculas')->add(\rutas::class . ':HabilitarCORSTodos');
 
-	$app->post('/borrarPelicula{id}', \rutas::class . ':eliminarPelicula')->add(\rutas::class . ':HabilitarCORSTodos');
+	$app->post('/borrarPelicula/{id}', \rutas::class . ':eliminarPelicula')->add(\rutas::class . ':HabilitarCORSTodos');
 
-	$app->post('/materia', \rutas::class . ':crearMateria');
+	$app->post('/altaPelicula', \rutas::class . ':altaPelicula');
 
 	$app->post('/usuario/{legajo}', \rutas::class . ':usuarioLegajo');
 

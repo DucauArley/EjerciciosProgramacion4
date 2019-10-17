@@ -59,16 +59,19 @@
 	    }
 
 
-	    public function AltaUsuario()
+	    public function AltaPelicula()
 	    {
 	        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 	        
-	        $consulta = $objetoAccesoDato->RetornarConsulta("INSERT INTO usuarios (nombre, clave, tipo)"
-	                                                    . "VALUES(:nombre, :clave, :tipo)");
-	        
+	        $consulta = $objetoAccesoDato->RetornarConsulta("INSERT INTO peliculas (id, nombre, tipo, FechaEstreno, CantidadPublico, FotoPelicula)"
+	                                                    . "VALUES(:id, :nombre, :tipo, :FechaEstreno, :CantidadPublico, :FotoPelicula)");
+			
+			$consulta->bindValue(':id', $this->id, PDO::PARAM_INT);
 	        $consulta->bindValue(':nombre', $this->nombre, PDO::PARAM_STR);
-	        $consulta->bindValue(':clave', $this->clave, PDO::PARAM_STR);
 	        $consulta->bindValue(':tipo', $this->tipo, PDO::PARAM_STR);
+			$consulta->bindValue(':FechaEstreno', $this->fechaEstreno, PDO::PARAM_STR);
+			$consulta->bindValue(':CantidadPublico', $this->cantidadPublico, PDO::PARAM_INT);
+			$consulta->bindValue(':FotoPelicula', $this->fotoPelicula, PDO::PARAM_STR);
 
 	        $consulta->execute();
 
@@ -88,7 +91,7 @@
 	        return $consulta->execute();
 	    }
 
-		public static function EliminarPelicula()
+		public function EliminarPelicula()
 	    {
 	        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();
 	        
