@@ -28,28 +28,15 @@ export class PeliculasService {
 
   Alta(body: any)
   {
-    const obj = {id: 2, nombre: 'Chucky',
-    tipo: 'Terror', FechaEstreno: '20/1/1985', CantidadPublico: 50000, FotoPelicula: 'url'};
 
     let params = new HttpParams();
-    params = params.set('id', '2');
-    params = params.set('nombre', 'chucky');
-    params = params.set('tipo', 'terror');
-    params = params.set('FechaEstreno', '20/10/1986');
-    params = params.set('CantidadPublico', '50000');
-    params = params.set('FotoPelicula', 'chucky');
-
-    const pelicula = new Pelicula();
-
-    pelicula.id = 2;
-    pelicula.nombre = 'Chucky';
-    pelicula.tipo = 'terror';
-    pelicula.FechaEstreno = '20/10/1986';
-    pelicula.CantidadPublico = 50000;
-    pelicula.FotoPelicula = 'url';
-
-    /*let asd = JSON.stringify(pelicula);
-    let asd2 = JSON.parse(asd);*/
+    //Le mando el id porque no le puse autoincremental
+    params = params.set('id', body.id);
+    params = params.set('nombre', body.nombre);
+    params = params.set('tipo', body.tipo);
+    params = params.set('FechaEstreno', body.FechaEstreno);
+    params = params.set('CantidadPublico', body.CantidadPublico);
+    params = params.set('FotoPelicula', body.FotoPelicula);
 
     return this.miHttp.httpPost('altaPelicula', params);
   }

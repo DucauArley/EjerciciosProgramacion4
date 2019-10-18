@@ -23,4 +23,24 @@
 
 </table>
 
-<button (click)="AltaPelicula()">Alta pelicula </button>
+<button (click)="alta = true">Crear pelicula </button>
+<div *ngIf="alta">
+  <h4>Id:</h4>
+  <input type="text" [(ngModel)]="pelicula.id">
+  <h4>Nombre:</h4>
+  <input type="text" [(ngModel)]="pelicula.nombre">
+  <h4>Tipo:</h4>
+  <input type="text" [(ngModel)]="pelicula.tipo">
+  <h4>Fecha de Estreno:</h4>
+  <input type="text" [(ngModel)]="pelicula.FechaEstreno">
+  <h4>Cantidad de Publico:</h4>
+  <input type="text" [(ngModel)]="pelicula.CantidadPublico">
+  <h4>Foto de la Pelicula:</h4>
+  <input type="text" [(ngModel)]="pelicula.FotoPelicula">
+  <br>
+  <br>
+  <button (click)="AltaPelicula()">Alta pelicula</button>
+</div>
+
+
+

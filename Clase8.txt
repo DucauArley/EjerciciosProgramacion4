@@ -1,0 +1,7 @@
+json2csu te devuelve un documento excel
+jsPDF te devuelve un pdf
+se usan para la parte de documentos
+para crear tablas smart table, angular table
+highcharts devuelve graficos estadisticos a traves de un json
+Habria que configurarlo para hacerlo andar
+Primeng es como materials que no se que poronga es. pero creo que es como para usar dependencias

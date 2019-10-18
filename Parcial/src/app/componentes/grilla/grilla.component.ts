@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from './../../servicios/peliculas.service';
 import { element } from 'protractor';
+import { Pelicula } from 'src/app/clases/pelicula';
+import { Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-grilla',
@@ -11,9 +13,12 @@ import { element } from 'protractor';
 })
 export class GrillaComponent implements OnInit {
 
-  constructor(private peliculasService: PeliculasService)
-  {
+  public pelicula: Pelicula;
+  public alta: boolean = false;
 
+  constructor(private peliculasService: PeliculasService, private router: Router)
+  {
+    this.pelicula = new Pelicula();
   }
 
   public peliculas = [];
@@ -30,7 +35,9 @@ export class GrillaComponent implements OnInit {
 
   AltaPelicula()
   {
-    this.peliculasService.Alta(null).subscribe(element => console.log(element));
+    this.alta = false;
+    this.router.navigate(['grilla']);
+    this.peliculasService.Alta(this.pelicula).subscribe(element => console.log(element));
   }
 
 }
