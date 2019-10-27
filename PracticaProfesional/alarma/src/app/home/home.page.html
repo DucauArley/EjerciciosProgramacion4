@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title color="light">
+      <p size="large" (click)="onLogout()">Salir</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  
+ 
+  <ion-button *ngIf="!activo" (click)="activar()" color="success" class="boton">Activar</ion-button>
+  <ion-button *ngIf="activo" (click)="desactivar()" color="danger" class="boton">Desactivar</ion-button>
+
+  <!--ion-card *ngIf="data">
+    <ion-card-content>
+      <h3>X: {{data.x | number:'1.4-4'}}</h3>
+      <h3>Y: {{data.y | number:'1.4-4'}}</h3>
+      <h3>Z: {{data.z | number:'1.4-4'}}</h3>
+    </ion-card-content>
+  </ion-card-->
+
+</ion-content>

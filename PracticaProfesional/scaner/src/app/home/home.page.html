@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title color="light">
+      <p size="large" (click)="onLogout()">Salir</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+    <!-- <img id="imageQrCreative" src="../../assets/img/qr_code_round_corner.png">
+    <div id="creditTotalText">
+      ${{creditoTotal}}
+    </div>
+    <div class="containerButtonCenter">
+      <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button>
+       <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar créditos</button> 
+    </div>
+    <div class="containerButtonCenter">
+      <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button> 
+      <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar<br>créditos</button>
+    </div>
+    <ion-fab top left class="hidden">
+      <button ion-fab color="primary" (click)="backScan()" id="btnBackScan">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-fab> -->
+  
+  
+    <ion-card style="height: 400px;">
+        <!-- <ion-card (click)="sacarFoto('linda')"> -->
+      <ion-card-header>
+        <ion-card-title><h1 style="font-size: 100px;">{{creditoTotal}}</h1></ion-card-title>
+        <ion-card-subtitle><h1 style="font-size: 50px;">Creditos Totales </h1></ion-card-subtitle>
+      </ion-card-header>
+  
+      
+    
+      <!-- <ion-card-content>
+         <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button>
+         <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar<br>créditos</button>
+         <button ion-fab color="primary" (click)="backScan()" id="btnBackScan">
+            <ion-icon name="arrow-round-back"></ion-icon>
+          </button>
+       
+      </ion-card-content> -->
+    </ion-card>
+  
+    <ion-card style="background-color:limegreen;">
+        <!-- <ion-card (click)="sacarFoto('linda')"> -->
+      <ion-card-header>
+        <ion-card-title (click)="scannear()" color="light"> Cargar Credito</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  
+    <ion-button color="danger" (click)="borrar()">Borrar</ion-button>
+
+</ion-content>

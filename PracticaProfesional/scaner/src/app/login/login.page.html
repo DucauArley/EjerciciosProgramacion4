@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="success">
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content padding class="background">
+
+    <ion-label style="color: white;">
+      <h1>Email</h1>
+    </ion-label>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-label style="color: white;">
+     <h1>Contraseña</h1>
+    </ion-label>
+    <ion-item>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    
+    <ion-row justify-content-center>
+      <ion-button  size="large" color="success" (click)="onLogin()">Login</ion-button>
+      <ion-button size="large" color="success" routerLink="/register">Registrarse</ion-button>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-md-12>
+        <ion-button expand="block" size="large" color="success" (click)="LoginAdmin()">Admin</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-md-12>
+        <ion-button expand="block" size="large" color="success" (click)="LoginInvitado()">Invitado</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-md-12>
+        <ion-button expand="block" size="large" color="success" (click)="LoginUsuario()">Usuario</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-md-12>
+        <ion-button expand="block" size="large" color="success" (click)="LoginAnonimo()">Anonimo</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-md-12>
+        <ion-button expand="block" size="large" color="success" (click)="LoginTester()">Tester</ion-button>
+      </ion-col>
+    </ion-row>
+
+</ion-content>
+  

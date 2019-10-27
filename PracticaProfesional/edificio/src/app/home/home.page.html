@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title color="light">
+      <p style="color: white;" (click)="onLogout()">Salir</p> 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  
+
+<ion-row no-margen no-padding>
+  
+  <ion-col col-md-6 no-margen no-padding>
+    <ion-card class="panel2" (click)="direccionar('lindas')"> 
+      <ion-card-content class="card-title">
+        Cosas lindas del edificio
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+
+  <ion-col col-md-6 no-margen no-padding>
+    <ion-card class="panel" (click)="direccionar('feas')">
+      <ion-card-content class="card-title">
+        Cosas feas del edificio
+      </ion-card-content>
+    </ion-card>
+  </ion-col>  
+</ion-row>
+
+</ion-content>

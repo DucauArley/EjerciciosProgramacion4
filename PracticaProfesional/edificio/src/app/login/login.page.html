@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding class="background">
+
+      <ion-col text-center>
+          <div><img src="../../assets/imagenes/user.png" height="45%" width="60%"></div>
+      </ion-col>
+
+
+      <ion-label style="color: white;">
+       <h1>Email</h1>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      <ion-label style="color: white;">
+       <h1>Contraseña</h1>
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  
+      <ion-button size="large" color="danger" (click)="onLogin()">Login</ion-button>
+      <ion-button size="large" color="danger" routerLink="/register">Registrarse</ion-button>
+
+
+    <ion-item>
+        <ion-label>Usuarios</ion-label>
+        <ion-select [(ngModel)]="miSelect" (ngModelChange)="logearse(miSelect)">
+          <ion-select-option value="Admin">Admin</ion-select-option>
+          <ion-select-option value="Invitado">Invitado</ion-select-option>
+          <ion-select-option value="Usuario">Usuario</ion-select-option>
+          <ion-select-option value="Anonimo">Anonimo</ion-select-option>
+          <ion-select-option value="Tester">Tester</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+
+  
+  </ion-content>
+  

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>colores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-row no-padding no-margin>
+      <ion-col col-md-6 no-padding no-margin>
+        <img src="../../assets/imagenes/rojo.jpg" no-margin no-padding class="imagenes" (click)="reproducirAudio(1)">
+      </ion-col>
+      <ion-col col-md-6 no-padding no-margin>
+        <img src="../../assets/imagenes/azul.jpg" class="imagenes" (click)="reproducirAudio(2)">
+      </ion-col>
+  </ion-row>
+  <ion-row no-padding no-margin>
+    <ion-col col-md-6 no-padding no-margin>
+      <img src="../../assets/imagenes/verde.jpg" class="imagenes" (click)="reproducirAudio(3)">
+    </ion-col>
+    <ion-col col-md-6 no-padding no-margin> 
+      <img src="../../assets/imagenes/amarillo.jpg" class="imagenes" (click)="reproducirAudio(4)">
+    </ion-col>
+  </ion-row>
+  <ion-row no-padding no-margin>
+    <ion-col col-md-12 no-padding no-margin>
+      <img src="../../assets/imagenes/naranja.png" style="height: 50%; width: 100%;" (click)="reproducirAudio(5)">
+    </ion-col>
+  </ion-row>
+
+  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="cambiarNombres(3)" id="bPorC">
+      <img src="../../assets/imagenes/portugal.png" class="imgFab">
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab  vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="cambiarNombres(2)" id="bIngC">
+        <img src="../../assets/imagenes/inglaterra.png" class="imgFab">
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-fab  vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button (click)="cambiarNombres(1)" id="bEspC" >
+          <img src="../../assets/imagenes/españa.jpg" class="imgFab">
+        </ion-fab-button>
+      </ion-fab>
+
+
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title color="light">
+      <p size="large" style="color: white;" (click)="onLogout()">Salir</p> 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+
+    <ion-card (click)="irPagina(1)">
+        <ion-card-content>
+            <img src="../../assets/imagenes/colores.jpg" class="imagenes">   
+          </ion-card-content>      
+      </ion-card>
+
+      <ion-card (click)="irPagina(2)">
+          <ion-card-content>
+              <img src="../../assets/imagenes/numeros.png" class="imagenes">
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card (click)="irPagina(3)">
+            <ion-card-content>
+                <img src="../../assets/imagenes/animales.jpg" class="imagenes">
+              </ion-card-content>
+          </ion-card>
+
+
+  
+  <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="cambiarNombres(3)" id="bPor">
+      <img src="../../assets/imagenes/portugal.png" class="imgFab">
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab  vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="cambiarNombres(2)" id="bIng">
+        <img src="../../assets/imagenes/inglaterra.png" class="imgFab">
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-fab  vertical="bottom" horizontal="start" slot="fixed">
+        <ion-fab-button (click)="cambiarNombres(1)" id="bEsp" class="borde">
+          <img src="../../assets/imagenes/españa.jpg" class="imgFab">
+        </ion-fab-button>
+      </ion-fab>
+
+</ion-content>

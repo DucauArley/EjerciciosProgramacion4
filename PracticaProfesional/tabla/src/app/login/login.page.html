@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content class="background">
+
+    <ion-item>
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Contraseña
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+  
+    <ion-item-divider>
+      <ion-button size="large" (click)="onLogin()">Login</ion-button>
+      <ion-button size="large" routerLink="/register">Registrarse</ion-button>
+    </ion-item-divider>
+
+    <ion-row justify-content-center>
+      <img src="../../assets/imagenes/user.png" height="50%" width="60%">
+    </ion-row>
+
+
+    <ion-fab vertical="bottom" horizontal="start" >
+        <ion-fab-button>
+          <ion-icon name="settings"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="end">
+          <ion-fab-button color="success">
+            <h3 (click)="LoginAdmin()">Ad</h3>
+          </ion-fab-button>
+          <ion-fab-button color="dark">
+            <h3 (click)="LoginInvitado()">I</h3>
+          </ion-fab-button>
+          <ion-fab-button color="secondary">
+            <h3 (click)="LoginUsuario()">U</h3>
+          </ion-fab-button>
+          <ion-fab-button color="warning">
+            <h3 (click)="LoginAnonimo()">An</h3>
+          </ion-fab-button>
+          <ion-fab-button color="danger">
+            <h3 (click)="LoginTester()">T</h3>
+          </ion-fab-button>
+          
+        </ion-fab-list>
+      </ion-fab>
+  
+</ion-content>
+  

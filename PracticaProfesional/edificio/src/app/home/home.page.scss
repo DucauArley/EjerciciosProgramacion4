@@ -1,0 +1,39 @@
+.panel
+{
+    height: 100%;
+    width: 100%;
+    background-image: url("../../assets/imagenes/edificiofeo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.panel2
+{
+    height: 100%;
+    width: 100%;
+    background-image: url("../../assets/imagenes/edificiolindo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+ion-row 
+{
+    height: 100%;
+}
+
+.card-title 
+{
+position: absolute;
+top: 36%;
+font-size: 2.0em;
+width: 100%;
+font-weight: bold;
+color: red;
+}
+
+ion-content.background
+{
+    --background: url("../../assets/imagenes/fondo.jpg")0 0/100% 100% no-repeat;
+}
