@@ -6,7 +6,7 @@ import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import * as firebase from 'firebase';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
-import { AlertController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular'; 
 
 
 @Component({
@@ -24,11 +24,12 @@ export class HomePage {
   public cod3: number = 0;
 
   constructor(private afAuth: AngularFireAuth, private authSvc: AuthService, private router: Router,
-     private barcodeScanner: BarcodeScanner, private ngZone: NgZone, public alertController: AlertController){}
+     private barcodeScanner: BarcodeScanner, private ngZone: NgZone, public alertController: AlertController)
+     {}
 
   ngOnInit()
   {
-    this.creditoTotal = this.leer();
+    this.leer();
   }
 
   onLogout()
@@ -109,11 +110,10 @@ export class HomePage {
     let algo = firebase.database().ref('usuarios/' + nombre[0] + '/creditos');
     var retorno = 0
 
-    algo.on('value', function(snapshot) {
-      retorno = snapshot.val();//Da los creditos
+    algo.on('value', (snapshot) => {
+      this.creditoTotal = snapshot.val();//Da los creditos
     });
-    
-    return retorno;
+  
   }
 
   meter()
