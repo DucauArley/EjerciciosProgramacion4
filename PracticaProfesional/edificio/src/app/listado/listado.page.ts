@@ -6,7 +6,7 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
 import { Subscription } from 'rxjs';
 import { IonSlides } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-listado',
