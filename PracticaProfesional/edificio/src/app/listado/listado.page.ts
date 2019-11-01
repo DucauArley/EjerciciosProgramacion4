@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as firebase from 'firebase';
-import { Route, ActivatedRoute, Router } from '@angular/router';
+import { Route, ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { NavParams, ModalController } from '@ionic/angular';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 import { Subscription } from 'rxjs';
@@ -72,7 +72,7 @@ export class ListadoPage implements OnInit {
 
     for(var j in this.imagenes)
     {
-      this.nombresUsers.push(this.nombres[j]);
+      this.nombresUsers.push(this.imagenes[j]);
       this.likes.push(this.votos[j]);
       let storageDown = firebase.storage().ref();
       let imageDown = await storageDown.child('imagenes/' + this.imagenes[j]).getDownloadURL().then(url =>
@@ -103,7 +103,6 @@ export class ListadoPage implements OnInit {
 
       for(var data in retorno)
       {
-        this.nombres.push(retorno[data]["usuario"]);
         this.votos.push(retorno[data]["likes"]);
         this.UltVotante.push(retorno[data]["ultVoto"]);
         this.imagenes.push(data);
@@ -133,7 +132,6 @@ export class ListadoPage implements OnInit {
       {
         if(retorno[data]["usuario"] == userId)
         {
-          this.nombres.push(retorno[data]["usuario"]);
           this.votos.push(retorno[data]["likes"]);
           this.UltVotante.push(retorno[data]["ultVoto"]);
           this.imagenes.push(data);
@@ -143,8 +141,6 @@ export class ListadoPage implements OnInit {
         this.prueba();
     });
   }
-
-
 
   moverSlide()
   {
@@ -200,7 +196,7 @@ export class ListadoPage implements OnInit {
     let curDate = new Date();
     let fecha =this.datepipe.transform(curDate, 'yyyy-MM-dd-hh:mm');
 
-    var nombImg = nombre + fecha;
+    var nombImg = fecha + nombre;
 
     await this.camera.getPicture(options).then(async (imageData) => {
      // imageData is either a base64 encoded string or a file URI
@@ -222,6 +218,14 @@ export class ListadoPage implements OnInit {
       ultVoto: ""
       });
     })
+  }
+
+  graficar()
+  {
+    let navigationExtras: NavigationExtras = { queryParams: 
+      {tipoImg: this.tipoImg}};
+
+      this.router.navigate(['admin'], navigationExtras);
   }
 
   likear(i:number)

@@ -2,7 +2,7 @@
   <ion-toolbar color="danger">
     <ion-button (click)="sacarFoto(tipoImg)">Sacar Foto</ion-button>
 
-    <ion-button [routerLink]="['/admin']" routerLinkActive="router-link-active" >Graficos</ion-button>
+    <ion-button (click)="graficar()">Graficos</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +21,7 @@
   <ion-grid *ngSwitchCase="'todasFotos'" fixed>
     <ion-slides class="slider" pager="true" [options]="slideOpts" zoom #slideWithNav>
       <ion-slide class="slider-slides" *ngFor="let imagen of imagenesUrl; let i = index">
-        <ion-card>
+        <ion-card style="background-color: white;">
             <ion-item>
               <h2>{{nombresUsers[i]}}</h2>
             </ion-item>
@@ -48,7 +48,7 @@
     <ion-grid *ngSwitchCase="'misFotos'" fixed>
       <ion-slides class="slider" pager="true" [options]="slideOpts" zoom #slideWithNav>
         <ion-slide class="slider-slides" *ngFor="let imagen of imagenesUrl; let i = index">
-          <ion-card>
+          <ion-card style="background-color: white;">
               <ion-item>
                 <h2>{{nombresUsers[i]}}</h2>
               </ion-item>

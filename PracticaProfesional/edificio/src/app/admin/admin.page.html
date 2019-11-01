@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
       
-  <ion-card>
+  <ion-card *ngIf="imgT" style="background-color: white;">
     <ion-card-header>
       Bar Chart
     </ion-card-header>
@@ -15,7 +15,7 @@
     </ion-card-content>
   </ion-card>
       
-  <ion-card>
+  <ion-card *ngIf="!imgT" style="background-color: white;">
     <ion-card-header>
       Doughnut Chart
     </ion-card-header>
