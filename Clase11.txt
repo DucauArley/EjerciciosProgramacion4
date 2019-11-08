@@ -1,0 +1,8 @@
+Angular tiene un principio para crear los tags html, hay que incluir el modulo que define ese tag
+<p mensaje=algo> Puedo meter un componente o una directiva en la que no puede tener un template
+<app-menu> Llamo al componente
+Pipe modifica lo que recibe y lo devuelve ej tolowercase, touppercase
+En la sala de juegos esta el pipe de sexo que es un ejemplo muy burdo
+Los pipes tranquilamente pueden ser funciones, la diferencia es que con el pipe no hace falta llamarlo como a la funcion
+ng g pipe
+https://github.com/octaviovillegas/Flisol2018/tree/master/src/pipes
