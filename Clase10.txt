@@ -1,1 +1,2 @@
 Angular2--qr Github de octavio
+zxyng -js nombre del repo que tiene el scanner qr
