@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Lista de Materias:</h1>
+        <table class="tabla" cellspacing="0" style="text-align: center">
+            <thead>
+                <tr>
+                <th>Email</th>
+                <th>Tipo</th>
+                <th>Materia</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center" *ngFor="let info of mats">
+                <tr >
+                    <td>{{info.email}}</td>
+                    <td>{{info.tipo}}</td>
+                    <td>{{info.materia}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <button (click)="cerrarListaMat.emit(false)" class="cancelbtn">Cerrar</button>
+    </div>
+</div>

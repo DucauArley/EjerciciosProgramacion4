@@ -1,1 +1,9 @@
-<p>home-admin works!</p>
+<app-home></app-home>
+<button (click)="altaMateria = true">Dar de alta una materia</button>
+<app-alta-materia (altaMateria)="altaMateria = false" [usuarios]="usuarios" [materias]="materias" *ngIf="altaMateria"></app-alta-materia>
+<br><br>
+<button (click)="listaMaterias = true">Ver listado de materias</button>
+<br><br>
+<button (click)="listaUsuarios = true">Ver listado de usuarios</button>
+<app-listado-materias (cerrarListaMat)="listaMaterias = false" [materias]="materias"  *ngIf="listaMaterias"></app-listado-materias>
+<app-listado-usuarios (cerrarListaUsr)="listaUsuarios = false" [usuarios]="usuarios" *ngIf="listaUsuarios"></app-listado-usuarios>

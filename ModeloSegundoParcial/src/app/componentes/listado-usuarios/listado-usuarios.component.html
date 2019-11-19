@@ -1,0 +1,28 @@
+<div class="row">
+        <div class="col-md-12">
+            <h1>Lista de Usuarios:</h1>
+            <div class="row justify-content-center">
+                    <label><input type="radio" (change)="ngOnInit()"  id="r1" name="gender" value="admin" required [(ngModel)]="tipoUsuario" checked>Admin</label>
+                    <label><input type="radio" (change)="ngOnInit()" id="r2" name="gender" value="alumno" [(ngModel)]="tipoUsuario">Alumno</label>
+                    <label><input type="radio" (change)="ngOnInit()" id="r3" name="gender" value="profesor" [(ngModel)]="tipoUsuario" >Profesor</label>
+                    <label><input type="radio" (change)="ngOnInit()" id="r4" name="gender" value="todos" [(ngModel)]="tipoUsuario" >Todos</label>
+                   </div>
+            <table class="tabla" style="text-align: center">
+                <thead>
+                    <tr>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center" *ngFor="let usr of user">
+                    <tr >
+                        <td>{{usr.email}}</td>
+                        <td>{{usr.tipo}}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <button (click)="cerrarListaUsr.emit(false)" class="cancelbtn">Cerrar</button>
+        </div>
+    </div>

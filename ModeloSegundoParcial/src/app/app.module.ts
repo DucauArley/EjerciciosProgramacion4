@@ -18,6 +18,13 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HomeAlumnoComponent } from './componentes/home-alumno/home-alumno.component';
 import { HomeProfeComponent } from './componentes/home-profe/home-profe.component';
 import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
+import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.component';
+import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
+import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
+import { InscribirseMateriaComponent } from './componentes/inscribirse-materia/inscribirse-materia.component';
+import { MateriasInscriptasComponent } from './componentes/materias-inscriptas/materias-inscriptas.component';
+import { MateriasCargoComponent } from './componentes/materias-cargo/materias-cargo.component';
+import { AlumnosMateriaComponent } from './componentes/alumnos-materia/alumnos-materia.component';
 
 
 @NgModule({
@@ -28,7 +35,14 @@ import { HomeAdminComponent } from './componentes/home-admin/home-admin.componen
     LoginComponent,
     HomeAlumnoComponent,
     HomeProfeComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    AltaMateriaComponent,
+    ListadoMateriasComponent,
+    ListadoUsuariosComponent,
+    InscribirseMateriaComponent,
+    MateriasInscriptasComponent,
+    MateriasCargoComponent,
+    AlumnosMateriaComponent
   ],
   imports: [
     BrowserModule,

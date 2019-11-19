@@ -6,6 +6,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HomeAlumnoComponent } from './componentes/home-alumno/home-alumno.component';
 import { HomeProfeComponent } from './componentes/home-profe/home-profe.component';
 import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
+import { InscribirseMateriaComponent } from './componentes/inscribirse-materia/inscribirse-materia.component';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [{path: 'AltaUsuario', component: UsuarioComponent},
 {path: 'Login', component: LoginComponent},
 {path: 'HomeAlumno', component: HomeAlumnoComponent},
 {path: 'HomeProfe', component: HomeProfeComponent},
-{path: 'HomeAdmin', component: HomeAdminComponent}];
+{path: 'HomeAdmin', component: HomeAdminComponent},
+{path: 'InscribirseMateria', component: InscribirseMateriaComponent}];
 
 //La parte del canactivate es el guard de firebase
 

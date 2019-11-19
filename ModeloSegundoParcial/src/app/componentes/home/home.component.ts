@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
 })
 export class HomeComponent implements OnInit {
 
-  email:string = firebase.auth().currentUser.email;;
+  email:string = firebase.auth().currentUser.email;
 
   constructor() { }
 
