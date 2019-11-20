@@ -1,8 +1,27 @@
-<h1>Agregar Usuario</h1>
-    Ingresar nombre<br>
-    <input type="text" id="nombre" [(ngModel)]="nombre"><br><br>
-    Ingresar clave <br>
-    <input type="text" id="clave" [(ngModel)]="clave"><br><br>
-    <button (click)="agregarUsuario()">Agregar Usuario</button>
-    <button (click)="guardarEditar()" *ngIf="editar">Guardar</button>
-    <button (click)="cancelarEditar()" *ngIf="editar">Cancelar</button>
+<body class="panel">
+  <div class="container" >
+   <div class="jumbotron" style="padding:50px; background-color: #F84944;">
+     <form action="return true;">
+
+       <div class="container">
+         <label><b style="color: #F9AF38">Email</b></label>
+         <input type="text" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
+
+         <label><b style="color: #F9AF38">Clave</b></label>
+         <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+
+         <label><b style="color: #F9AF38">Tipo de Usuario</b></label>
+          <select style="width: 100%; height: 40px;" name="name" id="name" required [(ngModel)]="tipoUsuario">
+            <option>Alumno</option>
+            <option>Profesor</option>
+            <option>Administrador</option>
+          </select>
+
+         <button  (click)="Registrar()" >Registrarse</button>
+         <button type="button" class="cancelbtn" routerLink="/Login">Cancelar</button>
+       </div>
+
+     </form>
+   </div>
+ </div>
+ </body>

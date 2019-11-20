@@ -1,42 +1,73 @@
-import { Usuario } from './../../clases/usuario';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  public usuario: Usuario;
-  public ingresado: boolean;
+  public email: string;
+  public clave: string;
+  public captcha: boolean = false;
+  public usuarios: Array<any>
 
-  constructor(public router: Router)
+  constructor(private authService: AuthService, private router: Router, private fireStore: AngularFirestore)
   {
-    this.usuario = new Usuario('pepe', 'secreto');
-    this.usuario.nombre = 'Pepe';
-    this.usuario.clave = 'secreto';
-
-    this.ingresado = false;
+    this.usuarios = new Array<any>();
   }
 
-  ngOnInit()
-  {
+  ngOnInit() {
+    let usuarios = this.fireStore.collection("usuarios").valueChanges();
+
+    usuarios.forEach(usuario=>
+      {
+        usuario.forEach(item=>
+          {
+            this.usuarios.push(item);
+          })
+      })
+
   }
 
-  Ingresar()
+  Loguearse()
   {
-    if(this.usuario.nombre == "fressi" && this.usuario.clave == "1234")
+    this.authService.LoginUsuario(this.email, this.clave).then((res)=>
     {
-      console.info("Usuario", this.usuario);
-      this.ingresado = true;
-      this.router.navigate(['/inicio']);
+      let entro: boolean = false;
+      this.usuarios.forEach(user =>
+        {
+          if(user.email == this.email)
+          {
+            entro = true;
+            switch(user.tipo)
+            {
+              case "Administrador":
+                this.router.navigate(['/HomeAdmin']);
+                break;
+              case "Alumno":
+                this.router.navigate(['/HomeAlumno']);
+                break;
+              case "Profesor":
+                this.router.navigate(['/HomeProfe']);
+                break;
+            }
+          }
+        });
 
-    }
-    else
-    {
-      alert("Usuario o contraseña incorrecta");
-    }
+        if(entro == false)
+        {
+          alert('El usuario no esta en la base de datos');
+          this.email = "";
+          this.clave = "";
+        }
+      //this.router.navigate(['/Home']);
+     }).catch(error=>
+      {
+          alert("Error");
+      });
   }
 }

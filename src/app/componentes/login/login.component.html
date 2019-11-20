@@ -1,18 +1,35 @@
-<h1>Login</h1>
-    Ingresar email<br>
-    <input type="text" id="email" [(ngModel)]="usuario.nombre"><br><br>
-    Ingresar contraseña<br>
-    <input type="text" id="clave" [(ngModel)]="usuario.clave"><br><br>
-    <button (click)="Ingresar()">Ingresar</button>
+<body class="panel">
+    <div class="container" >
+     <div class="jumbotron" style="padding:50px; background-color: #F84944;">
+       <form action="return true;">
 
-    <div *ngIf="ingresado"><!--ngIf crea el componente es un if ingresado == true-->
-    <p>{{usuario.nombre}}</p><!-- Esto te lo muestra en la pantalla es de
-    typescript -->
-    <p>{{usuario.clave}}</p>
-  </div>
+         <div class="container">
+           <label><b style="color: #F9AF38">Email</b></label>
+           <input type="text" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
 
-  <div [hidden]="!ingresado"><!--hidden es-->
-    <p>{{usuario.nombre}}</p><!-- Esto te lo muestra en la pantalla es de
-    typescript -->
-    <p>{{usuario.clave}}</p>
-  </div>
+           <label><b style="color: #F9AF38">Clave</b></label>
+           <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+           <button  (click)="Loguearse()" >Ingresar</button>
+
+         </div>
+
+         <div class="container" style="background-color: #F9AF38">
+           <button type="button" class="aceptbtn" routerLink="/AltaUsuario" >Registrarse</button>
+         </div>
+       </form>
+     </div>
+   </div>
+   </body>
+
+
+<!--div class="container">
+<div class="row d-flex justify-content-center">
+    <div class="col-3 align-self-center" style="background-color: lightgrey;">
+        <h3>Email</h3>
+        <input type="text" placeholder="Email" [(ngModel)]="email" name="email" required>
+        <h3>Contraseña</h3>
+        <input type="text" placeholder="Clave" [(ngModel)]="clave" name="pass" required>
+        <button (click)="Loguearse()">Loguearse</button>
+    </div>
+</div>
+</div-->

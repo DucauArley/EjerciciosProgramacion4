@@ -1,5 +1,7 @@
-import { Usuario } from './../../clases/usuario';
-import { Component, OnInit, Output, EventEmitter, HostListener, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from  './../../servicios/auth.service';
+import { Router } from '@angular/router';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-usuario',
@@ -8,54 +10,31 @@ import { Component, OnInit, Output, EventEmitter, HostListener, Input } from '@a
 })
 export class UsuarioComponent implements OnInit {
 
-  public nombre: string;
-  public clave: string;
-  public usuario: Usuario;
-  public usuarioEditar: Usuario;
-  public editar: boolean = false;
+  email: string = "";
+  clave: string = "";
+  public tipoUsuario: string = "Alumno";
 
-  @Input() Usuarios: Array<Usuario> = new Array<Usuario>();
-  @Output() seCreo: EventEmitter<any> = new EventEmitter<any>();
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService, private fireStore: AngularFirestore)
+  { }
 
   ngOnInit() {
   }
 
-  agregarUsuario() {
-    const usuario: Usuario = new Usuario(this.nombre, this.clave);
-    this.seCreo.emit(usuario);
-  }
-
-  guardarEditar()
+  Registrar()
   {
-    var index = -1;
-    var i = 0;
-    this.Usuarios.forEach(obj =>
+    this.authService.RegistrarUsuario(this.email, this.clave).then((res)=>
     {
-      if(obj.nombre == this.usuarioEditar.nombre && obj.clave == this.usuarioEditar.clave)
+      this.fireStore.collection("usuarios").doc(this.email).set({
+        email: this.email,
+        tipo: this.tipoUsuario,
+      }).catch(function(error)
       {
-        index = i;
-      }
-      i = i + 1;
-    });
+        alert("Error al registrarse");
+      })
 
-    this.Usuarios[index] = new Usuario(this.nombre, this.clave);
-    this.editar = false;
+      this.router.navigate(['/Login']);
+    }).catch(error => console.log("Error:", error));
   }
 
-  cancelarEditar()
-  {
-    this.usuario = new Usuario(this.usuarioEditar.nombre, this.usuarioEditar.clave);
-    this.editar = false;
-  }
-
-  EditarUsuario(usuario: Usuario)
-  {
-    this.usuarioEditar = new Usuario(usuario.nombre, usuario.clave);
-    this.nombre = this.usuarioEditar.nombre;
-    this.clave = this.usuarioEditar.clave;
-    this.usuario = usuario;
-    this.editar = true;
-  }
 
 }

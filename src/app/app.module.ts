@@ -1,40 +1,59 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './componentes/login/login.component';
+import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage'
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
-import { ListadoComponent } from './componentes/listado/listado.component';
-import { UsuarioListadoComponent } from './componentes/usuario-listado/usuario-listado.component';
-import { PaisesComponent } from './componentes/paises/paises.component';
-import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { AuthService } from './servicios/auth.service';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { HomeAlumnoComponent } from './componentes/home-alumno/home-alumno.component';
+import { HomeProfeComponent } from './componentes/home-profe/home-profe.component';
+import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
+import { AltaMateriaComponent } from './componentes/alta-materia/alta-materia.component';
+import { ListadoMateriasComponent } from './componentes/listado-materias/listado-materias.component';
+import { ListadoUsuariosComponent } from './componentes/listado-usuarios/listado-usuarios.component';
+import { InscribirseMateriaComponent } from './componentes/inscribirse-materia/inscribirse-materia.component';
+import { MateriasInscriptasComponent } from './componentes/materias-inscriptas/materias-inscriptas.component';
+import { MateriasCargoComponent } from './componentes/materias-cargo/materias-cargo.component';
+import { AlumnosMateriaComponent } from './componentes/alumnos-materia/alumnos-materia.component';
 
-import { MihttpService } from './servicios/mihttp/mihttp.service';
-import { PaisesService } from './servicios/paises/paises.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BienvenidoComponent,
-    LoginComponent,
     UsuarioComponent,
-    UsuarioListadoComponent,
-    ListadoComponent,
-    PaisesComponent,
+    HomeComponent,
+    LoginComponent,
+    HomeAlumnoComponent,
+    HomeProfeComponent,
+    HomeAdminComponent,
+    AltaMateriaComponent,
+    ListadoMateriasComponent,
+    ListadoUsuariosComponent,
+    InscribirseMateriaComponent,
+    MateriasInscriptasComponent,
+    MateriasCargoComponent,
+    AlumnosMateriaComponent
   ],
-
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [PaisesService, MihttpService],
+  providers: [AuthService, AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

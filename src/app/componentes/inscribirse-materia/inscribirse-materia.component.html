@@ -1,0 +1,16 @@
+<form class="contenedor" id="form" style="padding: 50px;">
+    
+        <h2>Anotarse en una materia:</h2>
+        Materia:<br>
+        <select name="mat" id="mat" class="ok" [(ngModel)]="nombre" *ngFor="let mat of materias">
+                <option>{{mat.nombre}}</option>
+            </select><br>
+        Cuatrimestre:<br>
+        <select name="cuat" id="cuat" class="ok" [(ngModel)]="cuatrimestre">
+            <option>Primero</option>
+            <option>Segundo</option>
+        </select><br>
+        <button class="cancelbtn" (click)="cerrar()">Cerrar</button>
+        <button class="aceptbtn" (click)="crear()" >Agregar</button>
+        
+    </form>

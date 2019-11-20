@@ -1,22 +1,26 @@
-import { animation } from '@angular/animations';
-import { Usuario } from './clases/usuario';
-import { LoginComponent } from './componentes/login/login.component';
-import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
-import { NgModule, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Routes, RouterModule } from '@angular/router';
-import { UsuarioListadoComponent } from './componentes/usuario-listado/usuario-listado.component';
-import { PaisesComponent } from './componentes/paises/paises.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { HomeAlumnoComponent } from './componentes/home-alumno/home-alumno.component';
+import { HomeProfeComponent } from './componentes/home-profe/home-profe.component';
+import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
+import { InscribirseMateriaComponent } from './componentes/inscribirse-materia/inscribirse-materia.component';
+import {AuthGuard} from './guards/auth.guard';
 
-const routes: Routes = [{path: 'inicio', component: BienvenidoComponent, data: {animation: 'bienvenidopage'}},
-{path: 'login', component: LoginComponent, data: {animation: 'loginpage'}},
-{path: '', component: UsuarioListadoComponent},
-{ path: 'paises', component: PaisesComponent }];
+
+const routes: Routes = [{path: 'AltaUsuario', component: UsuarioComponent},
+{path: '', component: UsuarioComponent},
+{path: 'Home', component: HomeComponent , canActivate:[AuthGuard]},
+{path: 'Login', component: LoginComponent},
+{path: 'HomeAlumno', component: HomeAlumnoComponent, canActivate:[AuthGuard]},
+{path: 'HomeProfe', component: HomeProfeComponent, canActivate:[AuthGuard]},
+{path: 'HomeAdmin', component: HomeAdminComponent, canActivate:[AuthGuard]}];
+
+//La parte del canactivate es el guard de firebase
 
 @NgModule({
-  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
