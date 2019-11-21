@@ -9,7 +9,7 @@
                 <th>Materia</th>
                 </tr>
             </thead>
-            <tbody style="text-align: center" *ngFor="let info of mats">
+            <tbody style="text-align: center" *ngFor="let info of info">
                 <tr >
                     <td>{{info.email}}</td>
                     <td>{{info.tipo}}</td>
@@ -18,6 +18,6 @@
                 
             </tbody>
         </table>
-        <button (click)="cerrarListaMat.emit(false)" class="cancelbtn">Cerrar</button>
+        <button (click)="cerrarListaAlumn.emit(false)" class="cancelbtn">Cerrar</button>
     </div>
 </div>

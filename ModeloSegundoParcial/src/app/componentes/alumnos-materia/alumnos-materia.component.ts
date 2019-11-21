@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import * as firebase from 'firebase';
+import { AlumnoMat } from './../../clases/alumno-mat';
 
 @Component({
   selector: 'app-alumnos-materia',
@@ -24,16 +25,21 @@ export class AlumnosMateriaComponent implements OnInit {
       {
         if(mat.profesor == email)
         {
-          this.mats.push(mat);
+          this.mats.push(mat);//Materias que da el profesor
         }
       });
 
     this.inscripciones.forEach(ins =>
       {
-        if(true)
-        {
+        this.mats.forEach(mat =>
+          {
+            if(mat.nombre == ins.nombre)
+            {
+              let alumno: AlumnoMat = new AlumnoMat(ins.alumno, "alumno", mat.nombre);
+              this.info.push(alumno)//Aca tendria que agregar los datos de la materia tambien, por lo menos el nombre
+            }
 
-        }
+          });
       });
   }
 

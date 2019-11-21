@@ -7,17 +7,16 @@ import { HomeAlumnoComponent } from './componentes/home-alumno/home-alumno.compo
 import { HomeProfeComponent } from './componentes/home-profe/home-profe.component';
 import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
 import { InscribirseMateriaComponent } from './componentes/inscribirse-materia/inscribirse-materia.component';
-
+import {AuthGuard} from './guards/auth.guard';
 
 
 const routes: Routes = [{path: 'AltaUsuario', component: UsuarioComponent},
 {path: '', component: UsuarioComponent},
-{path: 'Home', component: HomeComponent},
+{path: 'Home', component: HomeComponent , canActivate:[AuthGuard]},
 {path: 'Login', component: LoginComponent},
-{path: 'HomeAlumno', component: HomeAlumnoComponent},
-{path: 'HomeProfe', component: HomeProfeComponent},
-{path: 'HomeAdmin', component: HomeAdminComponent},
-{path: 'InscribirseMateria', component: InscribirseMateriaComponent}];
+{path: 'HomeAlumno', component: HomeAlumnoComponent, canActivate:[AuthGuard]},
+{path: 'HomeProfe', component: HomeProfeComponent, canActivate:[AuthGuard]},
+{path: 'HomeAdmin', component: HomeAdminComponent, canActivate:[AuthGuard]}];
 
 //La parte del canactivate es el guard de firebase
 

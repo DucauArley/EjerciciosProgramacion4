@@ -25,6 +25,8 @@ import { InscribirseMateriaComponent } from './componentes/inscribirse-materia/i
 import { MateriasInscriptasComponent } from './componentes/materias-inscriptas/materias-inscriptas.component';
 import { MateriasCargoComponent } from './componentes/materias-cargo/materias-cargo.component';
 import { AlumnosMateriaComponent } from './componentes/alumnos-materia/alumnos-materia.component';
+import { CambioColorDirective } from './directivas/cambio-color.directive';
+import { HayCupoPipe } from './pipes/hay-cupo.pipe';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { AlumnosMateriaComponent } from './componentes/alumnos-materia/alumnos-m
     InscribirseMateriaComponent,
     MateriasInscriptasComponent,
     MateriasCargoComponent,
-    AlumnosMateriaComponent
+    AlumnosMateriaComponent,
+    CambioColorDirective,
+    HayCupoPipe
   ],
   imports: [
     BrowserModule,

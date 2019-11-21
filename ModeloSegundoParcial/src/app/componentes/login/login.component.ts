@@ -70,4 +70,23 @@ export class LoginComponent implements OnInit {
           alert("Error");
       });
   }
+
+  admin()
+    {
+      this.email="admin@admin.com";
+        this.clave="123456";
+    }
+
+    profesor()
+    {
+      this.email="vincentvega@gmail.com";
+        this.clave="123456";
+    }
+
+    alumno()
+    {
+      this.email="robertovelezbot@gmail.com";
+      this.clave="123456";
+    }
+
 }

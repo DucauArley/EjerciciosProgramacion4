@@ -8,16 +8,17 @@
                 <th>Cuatrimestre</th>
                 <th>Cupos</th>
                 <th>Profesor</th>
+                <th>Hay Cupo</th>
                 </tr>
             </thead>
             <tbody style="text-align: center" *ngFor="let materia of mats">
-                <tr >
+                <tr [appCambioColor]="materia.cupos">
                     <td>{{materia.nombre}}</td>
                     <td>{{materia.cuatrimestre}}</td>
                     <td>{{materia.cupos}}</td>
                     <td>{{materia.profesor}}</td>
+                    <td>{{materia.cupos | hayCupo}}</td>
                 </tr>
-                
             </tbody>
         </table>
         <button (click)="cerrarListaMat.emit(false)" class="cancelbtn">Cerrar</button>
