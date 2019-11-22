@@ -1,0 +1,9 @@
+<app-home></app-home>
+<button (click)="materiasCargo = true">Ver materias a cargo</button>
+<br><br>
+<button (click)="alumnosMateria = true">Ver alumnos inscriptos en materia</button>
+<br><br>
+<button (click)="notasAlumnos = true">CargarNotas</button>
+<app-cargar-notas (cerrarCargarNotas)="notasAlumnos = false" [materias]="materias" [inscripciones]="inscripciones" *ngIf="notasAlumnos"></app-cargar-notas>
+<app-materias-cargo (cerrarListaMat)="materiasCargo = false" [materias]="materias" [inscripciones]="inscripciones" *ngIf="materiasCargo"></app-materias-cargo>
+<app-alumnos-materia (cerrarListaAlumn)="alumnosMateria = false" [materias]="materias" [inscripciones]="inscripciones" *ngIf="alumnosMateria"></app-alumnos-materia>

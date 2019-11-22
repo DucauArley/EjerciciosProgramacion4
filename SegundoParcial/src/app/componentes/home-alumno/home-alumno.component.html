@@ -1,0 +1,6 @@
+<app-home></app-home>
+<button (click)="inscripcionMateria = true">Inscribirse en una materia</button>
+<app-inscribirse-materia (inscripcionMateria)="inscripcionMateria = false" [materias]="materias" [inscripciones]="inscripciones" *ngIf="inscripcionMateria"></app-inscribirse-materia>
+<br><br>
+<button (click)="listaMaterias = true">Ver materias en las que está inscripto</button>
+<app-materias-inscriptas (cerrarListaMat)="listaMaterias = false" [materias]="materias" [inscripciones]="inscripciones" *ngIf="listaMaterias"></app-materias-inscriptas>

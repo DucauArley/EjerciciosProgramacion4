@@ -1,0 +1,20 @@
+<form class="contenedor" id="form" style="padding: 50px;">
+
+    <h2>Alta Materia:</h2>
+    Nombre:<br>
+    <input type="text" name="nomb" id="nomb" class="ok" [(ngModel)]="nombre">
+    Cuatrimestre:<br>
+    <select name="cuat" id="cuat" class="ok" [(ngModel)]="cuatrimestre">
+        <option>Primero</option>
+        <option>Segundo</option>
+    </select><br>
+    Cupos:<br>
+    <input type="number" name="cupos" class="ok" id="cupos" min="1" max="50" pattern="^[0-9]+" [(ngModel)]="cupos"><br>
+    Profesor:<br>
+    <input type="text" name="prof" class="ok" id="prof" [(ngModel)]="profesor"><br>
+    Imagen:<br>
+    <input type="file" name="myFile" id="myFile" [(ngModel)]="imagen">
+    <button class="cancelbtn" (click)="cerrar()">Cerrar</button>
+    <button class="aceptbtn" (click)="crear()" >Agregar</button>
+
+</form>

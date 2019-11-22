@@ -1,0 +1,39 @@
+<body class="panel">
+    <div class="container" >
+     <div class="jumbotron" style="padding:50px; background-color: #F84944;">
+       <form action="return true;">
+
+         <div class="container">
+           <label><b style="color: #F9AF38">Email</b></label>
+           <input type="text" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
+
+           <label><b style="color: #F9AF38">Clave</b></label>
+           <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+           <button  (click)="Loguearse()" >Ingresar</button>
+
+         </div>
+
+         <div class="container" style="background-color: #F9AF38">
+           <button type="button" class="aceptbtn" routerLink="/AltaUsuario" >Registrarse</button>
+         </div>
+
+         <button (click)="admin()" >Admin</button>
+         <button (click)="profesor()" >Profesor</button>
+         <button (click)="alumno()" >Alumno</button>
+       </form>
+     </div>
+   </div>
+   </body>
+
+
+<!--div class="container">
+<div class="row d-flex justify-content-center">
+    <div class="col-3 align-self-center" style="background-color: lightgrey;">
+        <h3>Email</h3>
+        <input type="text" placeholder="Email" [(ngModel)]="email" name="email" required>
+        <h3>Contraseña</h3>
+        <input type="text" placeholder="Clave" [(ngModel)]="clave" name="pass" required>
+        <button (click)="Loguearse()">Loguearse</button>
+    </div>
+</div>
+</div-->

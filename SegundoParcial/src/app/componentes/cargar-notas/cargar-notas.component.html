@@ -1,0 +1,17 @@
+<form class="contenedor" id="form" style="padding: 50px;">
+
+  <h2>Cargar nota de alumno:</h2>
+  Materia:<br>
+  <select name="mat" id="mat" class="ok" [(ngModel)]="nombre" *ngFor="let mat of materias">
+          <option>{{mat.nombre}}</option>
+      </select><br>
+  Alumno:<br>
+  <select name="al" id="al" class="ok" [(ngModel)]="alumno" *ngFor="let ins of inscripciones">
+      <option>{{ins.alumno}}</option>
+  </select><br>
+  Nota:<br>
+  <input type="number" name="nota" class="ok" id="nota" min="1" max="10" pattern="^[0-9]+" [(ngModel)]="notaAl"><br>
+  <button class="cancelbtn" (click)="cerrarCargarNotas.emit(false)">Cerrar</button>
+  <button class="aceptbtn" (click)="crear()" >Agregar</button>
+
+</form>
