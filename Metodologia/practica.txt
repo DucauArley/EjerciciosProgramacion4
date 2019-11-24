@@ -1,0 +1,118 @@
+El modelo de implantacion del usuario es la extensión del modelo esencial
+con restricciones de implantación (los requisitos no funcionales) impuestas por el usuario
+define:
+La frontera de automatización:Es decir, el límite entre tareas automáticas y manuales
+La interfaz humano-máquina:Es la forma en que el usuario interactuará con el sistema
+Las restricciones operacionales: impuestas por el usuario ya sea:
+De seguridad: Para minimizar el uso no autorizado del sistema
+De rendimiento: Parámetros que afectan la arquitectura
+Ambientales: Relativas al entorno/contexto disponible
+Políticas: Fundadas en motivos no técnicos
+Las actividades manuales: pautado y documentación
+
+El diseño es la creacion del modelo fisico (Combinacion entre modelo escencial y de implantacion del usuario)
+es donde se introduce calidad: traduce los requerimientos de los participantes a una representación de un 
+producto o sistema que puede evaluarse en su calidad
+Diseño de datos: Transforma los modelos del análisis en las estructuras de datos necesarias para implementar 
+el software. 
+Diseño de arquitectura: Define los elementos principales en la estructura del software, cómo se organizarán
+y las relaciones entre ellos.
+Diseño de interfaz: Describe cómo el software se comunicará con los sistemas con que interactúa y los usuarios
+que lo utilizan
+Diseño de componentes: transforma los modelos del análisis en los bloques/componentes necesarios para 
+implementar el software
+Objetivos del diseño estructurado:
+Rendimiento: velocidad de realización del trabajo, dado un recurso de hardware
+Control: Protección contra errores humanos, defectos de hardware y/o daños intencionales
+Cambiabilidad: Capacidad de modificación y/o adaptación
+Estos estan en constante compentencia ya que si se le presta mas atencion a uno, se descuida el otro, por lo
+tanto se tiene que lograr un equilibrio entre estos.
+
+El modelo fisico es la especificacion de diseño en la que se muestra como se utilizaran los recursos fisicos
+para satisfacer el modelo escencial y el modelo de implantacion de usuario
+Modelo de implantación de sistemas que se separa en:
+Modelo del procesador: Asignar procesos y almacenes a procesadores
+Modelo de tareas: En cada procesador, asignar procesos y almacenes a tareas
+Modelo de implantación de programas: en cada tarea, organizar módulos de forma jerárquica (cada tarea lleva 
+a cabo sólo una actividad a la vez)
+
+Las vistas son proyecciones del modelo centradas en un aspecto en particular, existe de:
+Casos de uso: Comportamiento del sistema desde la percepción del usuario
+Diseño: vocabulario del problema y su solución
+Interacción/Procesos: Flujo de control entre las diversas partes del sistema
+Implementación: Ensamblado y puesta en producción del sistema físico
+Despliegue: Topología hardware sobre la que se ejecuta el sistema físico
+
+Objeto:Instancia de una clase
+Instancia: Manifestacion concreta de una abstraccion
+Abstraccion: Caracteristicas esenciales de una entidad que la distinguen de otros tipos de entidades
+clase: Descripción de un conjunto de objetos que comparten los mismos atributos, operaciones, relaciones 
+y semántica.
+Atributo: Propiedad con nombre de un clasificador que describe un rango de valores que pueden obtener las 
+instancias de la propiedad.
+Operación: Implementación de un servicio que puede ser requerido a cualquier instancia del clasificador para 
+que muestre un comportamiento.
+
+Dependencia: Relación semántica entre elementos en la cual un cambio a uno puede afectar a la semántica del otro
+Generalizacion: Relación de especialización/generalización en la cual las instancias del elemento especializado
+pueden sustituir a las del general
+Asociacion: Relación semántica entre dos clasificadores que implica la conexión entre sus instancias. Describe 
+un conjunto de enlaces (que son sus instancias) y tiene multiplicidad
+
+Herencia: Mecanismo por el que elementos más específicos incorporan la estructura y comportamiento de elementos 
+más generales.
+
+
+Uml es un lenguaje unificado de modelado, sirve para visualizar un modelo explicito, especificar, es decir para
+construir modelos precisos, no ambiguos y completos, construir, puede conectarse directamente con una gran 
+variedad de lenguajes de programacion y documentar los artefactos de un sistema con gran cantidad de software
+Sus caracteristicas son que tiene: 
+Elementos: Abstracciones que constituyen las entidades de un modelo, ya sea:
+Estructurales: Partes estáticas de los modelos
+De comportamiento: Partes dinámicas de los modelos
+De agrupación: Partes organizativas de los modelos
+De anotación: Partes explicativas de los modelos
+Relaciones: Conexiones semánticas entre elementos, las hay de:
+Dependencia: Un cambio a elemento afecta la semántica del otro
+Asociación: Entre clasificadores que implica la conexión entre sus instancias
+Generalización: Las instancias especializadas pueden sustituir a las generales
+Realización: Un clasificador especifica un contrato que el otro debe cumplir
+Diagramas: Colecciones interesantes de elementos y relaciones representadas gráficamente
+Diagramas estructurales: Muestran los aspectos estáticos del sistema
+De clases: Conjunto de clases, interfaces, colaboraciones y sus relaciones
+De componentes: Partes internas, conectores y puertos que implementan un componente
+De objetos: Conjunto de objetos y sus relaciones en un momento dado
+De artefactos: Unidades físicas de implementación del sistema
+De despliegue: Configuración de nodos y artefactos en tiempo de ejecución
+Diagramas de comportamiento: Muestran los aspectos dinámicos del sistema
+De casos de uso: Conjunto de casos de uso y actores, y sus relaciones
+De interacción (secuencia y comunicación): interacción resaltando la ordenación temporal (secuencia) o 
+resaltando la organización estructural (comunicación)
+De estados: Máquina de estados (estados, transiciones, eventos y actividades)
+De actividades: Estructura, flujo de control y de datos de un proceso
+Se pueden extender con los perfiles: Paquete que agrupa extensiones pensadas para ajustar el modelo a un 
+dominio, tecnología o implementación específicos.Por ejemplo:
+SysML(Lenguaje de Modelado de Sistemas): Para sistemas de información complejos no necesariamente centrados
+en el software
+SoaML(Lenguaje de Modelado de Arquitecturas Orientadas a Servicios): Para arquitecturas de software 
+orientadas a servicios
+
+Diagramas estructurales: Muestran los aspectos estáticos del sistema.
+Diagrama de clases: Muestra un conjunto de clases, interfaces y colaboraciones, y las relaciones entre ellas.
+Diagrama de componentes: Muestra las partes internas, los conectores y los puertos que implementan un componente.
+Diagrama de objetos: Muestra un conjunto de objetos y sus relaciones en un momento dado.
+Diagrama de artefactos: Muestra las unidades físicas de implementación del sistema.
+Diagrama de despliegue: Muestra la configuración en tiempo de ejecución de los nodos de procesamiento, y los
+componentes que residen en ellos.
+Diagramas de comportamiento: Muestran los aspectos dinámicos del sistema.
+Diagrama de casos de uso: Muestra un conjunto de casos de uso y actores, y sus relaciones.
+Diagramas de interacción: Muestran una interacción, que consta de un conjunto de objetos y sus relaciones,
+incluyendo los mensajes que pueden enviarse entre ellos.
+Diagrama de secuencia: Diagrama de interacción que resalta la ordenación temporal de los mensajes.
+Diagrama de comunicación: Diagrama de interacción que resalta la organización estructural de los objetos que 
+envían y reciben señales.
+Diagrama de estados: Muestra una máquina de estados, con sus estados, transiciones, eventos y acciones.
+Diagrama de actividades: Muestra el flujo de control y datos entre actividades.
+
+Caso de uso: Descripción de un conjunto de secuencias de acciones, incluyendo variantes, que ejecuta un 
+sistema para producir un resultado observable, de valor para un actor.
