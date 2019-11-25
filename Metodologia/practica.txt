@@ -61,6 +61,9 @@ un conjunto de enlaces (que son sus instancias) y tiene multiplicidad
 
 Herencia: Mecanismo por el que elementos más específicos incorporan la estructura y comportamiento de elementos 
 más generales.
+El principio de sustitución de clases nos dice que si en alguna parte de nuestro código estamos usando una 
+clase, y esta clase es extendida, tenemos que poder utilizar cualquiera de las clases hijas y que el programa 
+siga siendo válido.
 
 
 Uml es un lenguaje unificado de modelado, sirve para visualizar un modelo explicito, especificar, es decir para
