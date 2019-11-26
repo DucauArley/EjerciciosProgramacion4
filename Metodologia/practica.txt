@@ -53,6 +53,8 @@ instancias de la propiedad.
 Operación: Implementación de un servicio que puede ser requerido a cualquier instancia del clasificador para 
 que muestre un comportamiento.
 
+Clasificador: Mecanismo que describe caracteristicas(propiedades encapsuladas) estructurales y de comportamiento
+
 Dependencia: Relación semántica entre elementos en la cual un cambio a uno puede afectar a la semántica del otro
 Generalizacion: Relación de especialización/generalización en la cual las instancias del elemento especializado
 pueden sustituir a las del general
@@ -65,6 +67,12 @@ El principio de sustitución de clases nos dice que si en alguna parte de nuestro
 clase, y esta clase es extendida, tenemos que poder utilizar cualquiera de las clases hijas y que el programa 
 siga siendo válido.
 
+Diagrama de clases: Muestra un conjunto de clases, interfaces y colaboraciones y las relaciones entre ellas
+Uso común del diagrama de clases:
+Identificar las cosas que los usuarios o programadores utilizan para describir el problema o la solución: cada 
+una de ellas será una abstracción
+Identificar las responsabilidades de cada abstracción definiéndolas claramente y repartiéndolas de forma pareja
+Proporcionar a cada clase los atributos y operaciones 	necesarios para cumplir esas responsabilidades
 
 Uml es un lenguaje unificado de modelado, sirve para visualizar un modelo explicito, especificar, es decir para
 construir modelos precisos, no ambiguos y completos, construir, puede conectarse directamente con una gran 
@@ -119,3 +127,7 @@ Diagrama de actividades: Muestra el flujo de control y datos entre actividades.
 
 Caso de uso: Descripción de un conjunto de secuencias de acciones, incluyendo variantes, que ejecuta un 
 sistema para producir un resultado observable, de valor para un actor.
+Un caso de uso es una herramienta que se utiliza para describir todas las variantes que puede tener una parte 
+del sistema al interactuar con un usuario ya sea si se interactúa de manera correcta, y todos las posibles 
+variantes por errores que puede llegar a tener por el mal uso de esta parte. Como informacion, necesita 
+conocer al actor y la parte del sistema que se va a probar
