@@ -1,0 +1,40 @@
+form {
+    padding: 10px;
+    background: lightgray;
+  }
+  .ok{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .contenedor
+  {
+  position: fixed;
+  width: 35%;
+  border-radius: 5px;
+  background-color: lightgrey;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  left: 32%;
+  top: 50px;
+  animation-name: aparecer;
+  animation-duration: 4s;
+  }
+  @keyframes aparecer
+  {
+  from{opacity: 0}
+  to{opacity: 1}
+  }
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+}

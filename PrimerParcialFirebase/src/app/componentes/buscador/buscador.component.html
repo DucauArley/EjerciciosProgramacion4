@@ -1,0 +1,6 @@
+<h1>Buscador:</h1>
+<input type="text" name="peli" id="peli" [(ngModel)]="nombre"><button (click)="buscar()">Buscar</button>
+
+<app-pelicula (cerrarPeli)="esta = false" [pelicula]="pelicula" *ngIf="esta"></app-pelicula>
+
+

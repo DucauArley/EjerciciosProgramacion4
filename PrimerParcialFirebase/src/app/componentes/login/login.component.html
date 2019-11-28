@@ -1,0 +1,19 @@
+<body class="panel">
+    <div class="container" >
+     <div class="jumbotron" style="padding:50px; background-color: #F84944;">
+       <form action="return true;">
+
+         <div class="container">
+           <label><b style="color: #F9AF38">Email</b></label>
+           <input type="text" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
+
+           <label><b style="color: #F9AF38">Clave</b></label>
+           <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
+           <button  (click)="Loguearse()" >Ingresar</button>
+
+         </div>
+
+       </form>
+     </div>
+   </div>
+   </body>
