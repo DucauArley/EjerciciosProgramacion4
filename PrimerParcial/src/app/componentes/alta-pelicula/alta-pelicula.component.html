@@ -1,0 +1,27 @@
+<form class="contenedor" id="form" style="padding: 50px;">
+
+        <h2>Alta Pelicula:</h2>
+        Nombre:<br>
+        <input type="text" name="nomb" id="nomb" class="ok" [(ngModel)]="nombre">
+        Tipo:<br>
+        <select name="tip" id="tip" class="ok" [(ngModel)]="tipo">
+            <option>Accion</option>
+            <option>Terror</option>
+            <option>Comedia</option>
+            <option>Amor</option>
+            <option>Thriler</option>
+            <option>Aventuras</option>
+        </select><br>
+        Fecha de Estreno:<br>
+        <input type="date" name="fech" id="fech" class="ok" [(ngModel)]="fecha">
+        <br>
+        Cantidad de Publico:<br>
+        <input type="number" name="public" class="ok" id="public" min="1" max="500000000" pattern="^[0-9]+" [(ngModel)]="cantidad">
+        Actor Principal:<br>
+        <select name="est" id="est" class="ok" [(ngModel)]="estrella">
+            <option *ngFor="let est of estrellas">{{est.apellido}}</option>
+          </select><br>
+        <button class="cancelbtn" (click)="cerrarAltaPeli.emit()">Cerrar</button>
+        <button class="aceptbtn" (click)="crear()" >Agregar</button>
+    
+    </form>

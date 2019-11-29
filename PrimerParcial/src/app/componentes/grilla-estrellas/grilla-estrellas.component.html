@@ -1,0 +1,29 @@
+<div class="row">
+        <div class="col-md-12">
+            <h1>Lista de Estrellas:</h1>
+            <button (click)="altaEstr = true" *ngIf="logeado">Alta Estrella</button>
+            <button routerLink="/login" *ngIf="!logeado">Alta Estrella</button>
+            <app-alta-estrella (cerrarAltaEstr)="altaEstr = false" [estrellas]="estrellas" *ngIf="altaEstr"></app-alta-estrella>
+            <table class="tabla" cellspacing="0" style="text-align: center">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Nacionalidad</th>
+                        <th>Fecha de Nacimiento</th>
+                    </tr>
+                </thead>
+                <tbody style="text-align: center" *ngFor="let estr of estrellas">
+                    <tr>
+                        <td>{{estr.nombre}}</td>
+                        <td>{{estr.apellido}}</td>
+                        <td>{{estr.nacionalidad}}</td>
+                        <td>{{estr.fechaNacimiento}}</td>
+                        <td style="text-align: center; padding-top: 4.5%;">
+                          <app-modificar-estrella [btnEstrella]="estr" (recargarGrilla)="cargarEstre()"></app-modificar-estrella>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

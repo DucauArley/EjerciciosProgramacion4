@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Lista de Peliculas:</h1>
+        <button (click)="altaPeli = true" *ngIf="logeado">Alta Pelicula</button>
+        <button routerLink="/login" *ngIf="!logeado">Alta Pelicula</button>
+        <app-alta-pelicula (cerrarAltaPeli)="altaPeli = false" [peliculas]="peliculas" [estrellas]="estrellas" *ngIf="altaPeli"></app-alta-pelicula>
+        <table class="tabla" cellspacing="0" style="text-align: center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Fecha de Estreno</th>
+                    <th>Cantidad de Publico</th>
+                    <th>Foto de Pelicula</th>
+                    <th>Actor Principal</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center" *ngFor="let peli of peliculas">
+                <tr>
+                    <td>{{peli.id}}</td>
+                    <td>{{peli.nombre}}</td>
+                    <td>{{peli.tipo}}</td>
+                    <td>{{peli.fechaEstreno}}</td>
+                    <td>{{peli.cantidadPublico}}</td>
+                    <td><img class="imagenDeMenu"  src="{{peli.fotoPelicula}}"></td>
+                    <td>{{peli.actorPrincipal}}</td>
+                    <td style="text-align: center; padding-top: 4.5%;">
+                        <app-boton-borrar [btnPeli]="peli" (recargarGrilla)="cargarPelis($event)"></app-boton-borrar>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button routerLink="/buscador">Buscar Pelicula</button>
+    </div>
+</div>
