@@ -10,7 +10,7 @@ form {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-  
+
   .contenedor
   {
   position: fixed;
@@ -38,3 +38,15 @@ form {
     font-size: 40px;
     font-weight: bold;
 }
+
+.imagenDeMenu{
+  width: 1000px;
+  height: 90px;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

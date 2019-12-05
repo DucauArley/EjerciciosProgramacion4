@@ -1,3 +1,4 @@
 ng build --prod --base-href "https://DucauArley.github.io/TP-Sala-de-Juegos-ANGULAR--master/"
 ngh
 ionic cordova build android
+ng build --prod --base-href "https://DucauArley.github.io/BuenaSonrisa/"

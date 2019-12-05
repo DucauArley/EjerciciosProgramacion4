@@ -1,0 +1,4 @@
+<h3>Nacionalidad:</h3>
+<select name="act" id="act" class="ok" (change)="cambioSelect()" [(ngModel)]="nacionalidad">
+    <option *ngFor="let actor of estrellas">{{actor.nacionalidad}}</option>
+  </select><br>

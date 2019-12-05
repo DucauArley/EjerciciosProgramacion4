@@ -23,6 +23,10 @@ import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { AuthService } from './servicios/auth.service';
 import { EstrellasPeliculasComponent } from './componentes/estrellas-peliculas/estrellas-peliculas.component';
+import { ModificarEstrellaComponent } from './componentes/modificar-estrella/modificar-estrella.component';
+import { NexoEstrellaComponenteComponent } from './componentes/nexo-estrella-componente/nexo-estrella-componente.component';
+import { FiltroComponenteComponent } from './componentes/filtro-componente/filtro-componente.component';
+import { ListadoEstrellasFiltroComponent } from './componentes/listado-estrellas-filtro/listado-estrellas-filtro.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { EstrellasPeliculasComponent } from './componentes/estrellas-peliculas/e
     PeliculaComponent,
     LoginComponent,
     BienvenidoComponent,
-    EstrellasPeliculasComponent
+    EstrellasPeliculasComponent,
+    ModificarEstrellaComponent,
+    NexoEstrellaComponenteComponent,
+    FiltroComponenteComponent,
+    ListadoEstrellasFiltroComponent
   ],
   imports: [
     BrowserModule,

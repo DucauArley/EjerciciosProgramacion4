@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { EstrellasPeliculasComponent } from './componentes/estrellas-peliculas/estrellas-peliculas.component';
+import { NexoEstrellaComponenteComponent } from './componentes/nexo-estrella-componente/nexo-estrella-componente.component';
 
 const routes: Routes = [{path: 'grillaPeliculas', component: GrillaPeliculasComponent, data: {animation: 'bienvenidopage'}},
 {path: '', component: BienvenidoComponent, data: {animation: 'FilterPage'}},
 {path: 'grillaEstrellas', component: GrillaEstrellasComponent},
 {path: 'buscador', component: BuscadorComponent, data: {animation: 'loginpage'}},
 {path: 'login', component: LoginComponent, data: {animation: 'loginpage'}},
-{path: 'estrellaPelicula', component: EstrellasPeliculasComponent, data: {animation: 'loginpage'}}];
+{path: 'estrellaPelicula', component: EstrellasPeliculasComponent, data: {animation: 'loginpage'}},
+{path: 'filtroEstrellas', component: NexoEstrellaComponenteComponent, data: {animation: 'loginpage'}}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

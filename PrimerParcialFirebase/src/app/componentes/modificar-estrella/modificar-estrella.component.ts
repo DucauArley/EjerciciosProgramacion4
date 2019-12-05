@@ -1,51 +1,77 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { isUndefined } from 'util';
-import { MiservicioPrincipalService } from './../../servicios/miservicio-principal.service';
 
 @Component({
-  selector: 'app-alta-estrella',
-  templateUrl: './alta-estrella.component.html',
-  styleUrls: ['./alta-estrella.component.css']
+  selector: 'app-modificar-estrella',
+  templateUrl: './modificar-estrella.component.html',
+  styleUrls: ['./modificar-estrella.component.css']
 })
-export class AltaEstrellaComponent implements OnInit {
+export class ModificarEstrellaComponent implements OnInit {
 
-  @Output() cerrarAltaEstr: EventEmitter<any> = new EventEmitter<any>();
-  @Input() estrellas: any;
-  public nombre: string;
-  public apellido: string;
-  public nacionalidad: string;
-  public nacimiento: string;
+  @Input() btnEstrella: any;
+  @Output() recargarGrilla: EventEmitter<string> = new EventEmitter<string>();
+  public nombre:string;
+  public apellido:string;
+  public nacionalidad:string;
+  public nacimiento:string;
+  public modific:boolean = false;
+  public imagePath;
+  public imgURL: any;
+  public message: string;
 
   constructor(private fireStore: AngularFirestore) { }
 
-  ngOnInit() {
+  ngOnInit(){
+  }
+ 
+  preview(files) {
+    if (files.length === 0)
+      return;
+ 
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+ 
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      this.imgURL = reader.result; 
+    }
   }
 
-  crear()
+  datos()
   {
-    let ok = this.verificar();
+    this.modific = true;
+
+    this.nombre = this.btnEstrella.nombre;
+    this.apellido= this.btnEstrella.apellido;
+    this.nacionalidad = this.btnEstrella.nacionalidad;
+    this.nacimiento = this.btnEstrella.nacimiento;
+  }
+
+  modificar()
+  {
+    let ok:boolean = this.verificar();
 
     if(ok)
     {
-      this.fireStore.collection("estrellas").doc(this.apellido).set({
+      this.fireStore.collection('estrellas').doc(this.apellido).set({
         nombre: this.nombre,
         apellido: this.apellido,
         nacionalidad: this.nacionalidad,
-        fechaNacimiento: this.nacimiento
+        fechaNacimiento: this.nacimiento,
+        fotoEstrella: this.imgURL
       }).catch(function(error)
       {
         alert("Error al cargar");
       });
 
-      console.log(this.nombre);
-      console.log(this.apellido);
-      console.log(this.nacionalidad);
-      console.log(this.nacimiento);
-
-
-      this.cerrarAltaEstr.emit(false);
-      window.location.reload();
+      this.modific = false;
+      this.recargarGrilla.emit();
     }
   }
 
@@ -64,13 +90,13 @@ export class AltaEstrellaComponent implements OnInit {
     document.getElementById("fech").classList.add("ok");
 
 
-    this.estrellas.forEach(estrella =>
+    /*this.btnEstrellas.forEach(estrella =>
     {
       if(estrella.nombre == this.nombre && estrella.apellido == this.apellido)
       {
         okEst = false;
       }
-    });
+    });*/
 
     if(okEst != true || isUndefined(this.nombre))
     {
@@ -98,7 +124,5 @@ export class AltaEstrellaComponent implements OnInit {
 
     return retorno;
   }
-
-
 
 }

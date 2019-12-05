@@ -1,6 +1,6 @@
 <form class="contenedor" id="form" style="padding: 50px;">
     <span (click)="cerrarPeli.emit()" class="close">×</span>
-    <!--Faltaria la imagen pero veo como guardarla en base 64 para mostrarla-->
+    <td><img class="imagenDeMenu center"  src="{{pelicula.fotoPelicula}}"></td>
     <h3>Nombre:{{pelicula.nombre}}</h3>
     <h3>Tipo:{{pelicula.tipo}}</h3>
     <h3>Fecha de Estreno:{{pelicula.fechaEstreno}}</h3>

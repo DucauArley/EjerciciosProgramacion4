@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AuthService } from './../../servicios/auth.service';
+import { auth } from 'firebase/app';
+import { MiservicioPrincipalService } from './../../servicios/miservicio-principal.service';
 
 @Component({
   selector: 'app-grilla-peliculas',
@@ -11,16 +14,17 @@ export class GrillaPeliculasComponent implements OnInit {
   public peliculas: Array<any>;
   public estrellas: Array<any>;
   public altaPeli:boolean = false;
+  public logeado:boolean = false;
 
-
-  constructor(private fireStore: AngularFirestore) 
+  constructor(private fireStore: AngularFirestore, private authService: AuthService)
   {
   }
 
-  ngOnInit() 
+  ngOnInit()
   {
     this.peliculas = new Array<any>();
     this.estrellas = new Array<any>();
+    this.getCurrentUser();
 
     let pelis = this.fireStore.collection("peliculas").valueChanges();
 
@@ -42,6 +46,23 @@ export class GrillaPeliculasComponent implements OnInit {
           })
       });
   }
+
+  getCurrentUser()
+  {
+    this.authService.isAuth().subscribe(auth => {
+      if(auth)
+      {
+        this.logeado = true;
+        console.log('user logged', this.authService);
+      }
+      else
+      {
+        this.logeado = false;
+        console.log('NOT user logged', this.authService);
+      }
+    });
+  }
+
 
   cargarPelis($event)
   {

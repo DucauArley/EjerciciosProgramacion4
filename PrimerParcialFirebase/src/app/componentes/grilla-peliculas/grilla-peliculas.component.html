@@ -1,7 +1,8 @@
 <div class="row">
     <div class="col-md-12">
         <h1>Lista de Peliculas:</h1>
-        <button (click)="altaPeli = true">Alta Pelicula</button>
+        <button (click)="altaPeli = true" *ngIf="logeado">Alta Pelicula</button>
+        <button routerLink="/login" *ngIf="!logeado">Alta Pelicula</button>
         <app-alta-pelicula (cerrarAltaPeli)="altaPeli = false" [peliculas]="peliculas" [estrellas]="estrellas" *ngIf="altaPeli"></app-alta-pelicula>
         <table class="tabla" cellspacing="0" style="text-align: center">
             <thead>
@@ -22,7 +23,7 @@
                     <td>{{peli.tipo}}</td>
                     <td>{{peli.fechaEstreno}}</td>
                     <td>{{peli.cantidadPublico}}</td>
-                    <td>{{peli.fotoPelicula}}</td>
+                    <td><img class="imagenDeMenu"  src="{{peli.fotoPelicula}}"></td>
                     <td>{{peli.actorPrincipal}}</td>
                     <td style="text-align: center; padding-top: 4.5%;">
                         <app-boton-borrar [btnPeli]="peli" (recargarGrilla)="cargarPelis($event)"></app-boton-borrar>

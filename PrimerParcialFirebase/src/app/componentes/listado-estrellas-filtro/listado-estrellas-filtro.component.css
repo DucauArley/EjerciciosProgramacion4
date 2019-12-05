@@ -15,20 +15,6 @@ tr:nth-child(even)
 {
 	background-color: lightgrey;
 }
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-  }
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
 
 .imagenDeMenu{
     width: 80px;

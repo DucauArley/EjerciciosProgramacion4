@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { MiservicioPrincipalService } from './../../servicios/miservicio-principal.service';
 
 @Component({
   selector: 'app-boton-borrar',
@@ -11,7 +12,7 @@ export class BotonBorrarComponent implements OnInit {
   @Input() btnPeli: any;
   @Output() recargarGrilla: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private fireStore: AngularFirestore) 
+  constructor(private fireStore: AngularFirestore)
   {
 
   }

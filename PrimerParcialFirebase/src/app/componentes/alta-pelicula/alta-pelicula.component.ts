@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { isUndefined } from 'util';
+import { MiservicioPrincipalService } from './../../servicios/miservicio-principal.service';
 
 @Component({
   selector: 'app-alta-pelicula',
@@ -36,12 +37,12 @@ export class AltaPeliculaComponent implements OnInit {
         tipo: this.tipo,
         fechaEstreno: this.fecha,
         cantidadPublico: this.cantidad,
-        fotoPelicula: "url",
+        fotoPelicula: "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png",
         actorPrincipal: this.estrella
       }).catch(function(error)
       {
         alert("Error al cargar");
-      })
+      });
 
       console.log(this.ultimoId);
       console.log(this.nombre);
@@ -49,7 +50,7 @@ export class AltaPeliculaComponent implements OnInit {
       console.log(this.fecha);
       console.log(this.cantidad);
 
-
+      window.location.reload();
       this.cerrarAltaPeli.emit(false);
     }
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Pelicula } from './../../clases/pelicula';
+import { MiservicioPrincipalService } from './../../servicios/miservicio-principal.service';
 
 @Component({
   selector: 'app-buscador',
@@ -16,7 +17,7 @@ export class BuscadorComponent implements OnInit {
 
   constructor(private fireStore: AngularFirestore) { }
 
-  ngOnInit() 
+  ngOnInit()
   {
     this.peliculas = new Array<any>();
 
