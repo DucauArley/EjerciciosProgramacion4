@@ -22,7 +22,7 @@
                         <td>{{estr.fechaNacimiento}}</td>
                         <td><img class="imagenDeMenu"  src="{{estr.fotoEstrella}}"></td>
                         <td style="text-align: center; padding-top: 4.5%;">
-                          <app-modificar-estrella [btnEstrella]="estr" (recargarGrilla)="cargarEstre()"></app-modificar-estrella>
+                          <app-modificar-estrella [btnEstrella]="estr" (recargarGrilla)="cargarEstre($event)"></app-modificar-estrella>
                       </td>
                     </tr>
                 </tbody>

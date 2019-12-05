@@ -32,7 +32,8 @@ export class AltaEstrellaComponent implements OnInit {
         nombre: this.nombre,
         apellido: this.apellido,
         nacionalidad: this.nacionalidad,
-        fechaNacimiento: this.nacimiento
+        fechaNacimiento: this.nacimiento,
+        activa: "true"
       }).catch(function(error)
       {
         alert("Error al cargar");

@@ -27,6 +27,10 @@ import { ModificarEstrellaComponent } from './componentes/modificar-estrella/mod
 import { NexoEstrellaComponenteComponent } from './componentes/nexo-estrella-componente/nexo-estrella-componente.component';
 import { FiltroComponenteComponent } from './componentes/filtro-componente/filtro-componente.component';
 import { ListadoEstrellasFiltroComponent } from './componentes/listado-estrellas-filtro/listado-estrellas-filtro.component';
+import { BorradoLogicoComponent } from './componentes/borrado-logico/borrado-logico.component';
+import { DetalleComponenteComponent } from './componentes/detalle-componente/detalle-componente.component';
+import { MostrarBorradoComponenteComponent } from './componentes/mostrar-borrado-componente/mostrar-borrado-componente.component';
+import { DetalleEstrellaComponenteComponent } from './componentes/detalle-estrella-componente/detalle-estrella-componente.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { ListadoEstrellasFiltroComponent } from './componentes/listado-estrellas
     ModificarEstrellaComponent,
     NexoEstrellaComponenteComponent,
     FiltroComponenteComponent,
-    ListadoEstrellasFiltroComponent
+    ListadoEstrellasFiltroComponent,
+    BorradoLogicoComponent,
+    DetalleComponenteComponent,
+    MostrarBorradoComponenteComponent,
+    DetalleEstrellaComponenteComponent
   ],
   imports: [
     BrowserModule,

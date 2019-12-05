@@ -10,6 +10,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { EstrellasPeliculasComponent } from './componentes/estrellas-peliculas/estrellas-peliculas.component';
 import { NexoEstrellaComponenteComponent } from './componentes/nexo-estrella-componente/nexo-estrella-componente.component';
+import { DetalleComponenteComponent } from './componentes/detalle-componente/detalle-componente.component';
+
 
 const routes: Routes = [{path: 'grillaPeliculas', component: GrillaPeliculasComponent, data: {animation: 'bienvenidopage'}},
 {path: '', component: BienvenidoComponent, data: {animation: 'FilterPage'}},
@@ -17,7 +19,8 @@ const routes: Routes = [{path: 'grillaPeliculas', component: GrillaPeliculasComp
 {path: 'buscador', component: BuscadorComponent, data: {animation: 'loginpage'}},
 {path: 'login', component: LoginComponent, data: {animation: 'loginpage'}},
 {path: 'estrellaPelicula', component: EstrellasPeliculasComponent, data: {animation: 'loginpage'}},
-{path: 'filtroEstrellas', component: NexoEstrellaComponenteComponent, data: {animation: 'loginpage'}}];
+{path: 'filtroEstrellas', component: NexoEstrellaComponenteComponent, data: {animation: 'loginpage'}},
+{path: 'detalleComponente', component: DetalleComponenteComponent, data: {animation: 'loginpage'}}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

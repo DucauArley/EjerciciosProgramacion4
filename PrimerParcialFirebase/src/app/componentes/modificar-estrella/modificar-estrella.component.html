@@ -9,15 +9,15 @@
   Nombre:<br>
   <input type="text" name="nomb" id="nomb" class="ok" [(ngModel)]="nombre">
   Apellido:<br>
-  <input type="text" name="ape" id="ape" class="ok" [(ngModel)]="apellido">
+  <input type="text" name="ape" id="ape" disabled="true" class="ok" [(ngModel)]="apellido">
   Nacionalidad:<br>
   <input type="text" name="nac" id="nac" class="ok" [(ngModel)]="nacionalidad">
   Fecha de Nacimiento:<br>
   <input type="date" name="fech" id="fech" class="ok"[(ngModel)]="nacimiento">
   <br>
-  <input #file type="file" accept='image/*' (change)="preview(file.files)" />
-  
-  <button class="cancelbtn" (click)="recargarGrilla.emit()" (click)="modific = false">Cerrar</button>
+  <input #file type="file" accept='image/*' (change)="preview(file.files)" /><br>
+
+  <button class="cancelbtn" (click)="recargarGrilla.emit(1)" (click)="modific = false">Cerrar</button>
   <button class="aceptbtn" (click)="modificar()">Modificar</button>
 
 </form>

@@ -12,7 +12,7 @@ export class EstrellasPeliculasComponent implements OnInit {
   public peliculas: Array<any>;
   public estrellas: Array<any>;
   public info: Array<any> = new Array<any>();;
-  public actor: string = "Schwarzenegger";
+  public actor: string = "Octopus";
 
   constructor(private fireStore: AngularFirestore)
   {

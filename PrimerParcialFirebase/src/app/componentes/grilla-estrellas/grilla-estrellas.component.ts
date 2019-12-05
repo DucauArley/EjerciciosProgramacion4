@@ -48,9 +48,13 @@ export class GrillaEstrellasComponent implements OnInit {
     });
   }
 
-  cargarEstre()
+  cargarEstre($event)
   {
-    this.estrellas = new Array<any>();
+
+    if($event == '0')
+    {
+      this.estrellas = new Array<any>();
+    }
   }
 
 }
