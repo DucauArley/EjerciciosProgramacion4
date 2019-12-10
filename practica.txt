@@ -27,6 +27,12 @@ Control: Protección contra errores humanos, defectos de hardware y/o daños inten
 Cambiabilidad: Capacidad de modificación y/o adaptación
 Estos estan en constante compentencia ya que si se le presta mas atencion a uno, se descuida el otro, por lo
 tanto se tiene que lograr un equilibrio entre estos.
+Diseño Estructurado:
+Acoplamiento:Se define como el grado de interdependencia que hay entre los distintos módulos de un programa;
+lo deseable es que esta interdependencia sea lo menor posible, es decir, un bajo acoplamiento.
+Cohesion:Se define como la medida de fuerza o relación funcional existente entre las sentencias o grupos de 
+sentencias de un mismo módulo. Un módulo cohesionado ejecutará una única tarea sencilla interactuando muy poco
+o nada con el resto de módulos del programa.
 
 El modelo fisico es la especificacion de diseño en la que se muestra como se utilizaran los recursos fisicos
 para satisfacer el modelo escencial y el modelo de implantacion de usuario
@@ -35,6 +41,14 @@ Modelo del procesador: Asignar procesos y almacenes a procesadores
 Modelo de tareas: En cada procesador, asignar procesos y almacenes a tareas
 Modelo de implantación de programas: en cada tarea, organizar módulos de forma jerárquica (cada tarea lleva 
 a cabo sólo una actividad a la vez)
+
+Principios del modelado orientado a objetos:
+La elección acerca de qué modelos crear tiene una profunda influencia sobre cómo se acomete un problema y cómo 
+se da forma a una solución
+Deben estar ligados a la realidad
+Un único modelo o vista no es suficiente cualquier sistema no trivial se aborda mejor a través de un pequeño 
+conjunto de modelos casi independientes con múltiples puntos de vistas
+Los modelos pueden ser expresados con diferentes niveles de presicion
 
 Las vistas son proyecciones del modelo centradas en un aspecto en particular, existe de:
 Casos de uso: Comportamiento del sistema desde la percepción del usuario
@@ -53,7 +67,8 @@ instancias de la propiedad.
 Operación: Implementación de un servicio que puede ser requerido a cualquier instancia del clasificador para 
 que muestre un comportamiento.
 
-Clasificador: Mecanismo que describe caracteristicas(propiedades encapsuladas) estructurales y de comportamiento
+Clasificador: Es un elemento del modelo que describe el comportamiento y características de la estructura, 
+ejemplos de ellos son: clases, interfaces, casos de uso y actores, tipos de datos.
 
 Dependencia: Relación semántica entre elementos en la cual un cambio a uno puede afectar a la semántica del otro
 Generalizacion: Relación de especialización/generalización en la cual las instancias del elemento especializado
