@@ -66,15 +66,21 @@ Atributo: Propiedad con nombre de un clasificador que describe un rango de valor
 instancias de la propiedad.
 Operación: Implementación de un servicio que puede ser requerido a cualquier instancia del clasificador para 
 que muestre un comportamiento.
+Interfaz: Coleccion de operaciones que se utiliza para especificar el servicio de una clase
 
 Clasificador: Es un elemento del modelo que describe el comportamiento y características de la estructura, 
 ejemplos de ellos son: clases, interfaces, casos de uso y actores, tipos de datos.
 
 Dependencia: Relación semántica entre elementos en la cual un cambio a uno puede afectar a la semántica del otro
+se da entre clases y entre clases e interfaces
 Generalizacion: Relación de especialización/generalización en la cual las instancias del elemento especializado
-pueden sustituir a las del general
+pueden sustituir a las del general se da entre clases
 Asociacion: Relación semántica entre dos clasificadores que implica la conexión entre sus instancias. Describe 
-un conjunto de enlaces (que son sus instancias) y tiene multiplicidad
+un conjunto de enlaces (que son sus instancias) y tiene multiplicidad, Se da entre clases e interfaces y entre
+interfaces
+
+Abstraccion: Es el acto o resultado de eliminar diferencias entre objetos de modo que podamos ver los aspectos
+comunes de estos	
 
 Herencia: Mecanismo por el que elementos más específicos incorporan la estructura y comportamiento de elementos 
 más generales.
@@ -82,12 +88,17 @@ El principio de sustitución de clases nos dice que si en alguna parte de nuestro
 clase, y esta clase es extendida, tenemos que poder utilizar cualquiera de las clases hijas y que el programa 
 siga siendo válido.
 
+Polimorfismo: Mismo nombre de la operacion pero distinto metodo
+
+Encapsulamiento: Es el resultado o acto de ocultar los detalles de implantacion de un objeto respecto de un 
+usuario, permitiendo reducir potenciales errores que pudieran ocurrir
+
 Diagrama de clases: Muestra un conjunto de clases, interfaces y colaboraciones y las relaciones entre ellas
 Uso común del diagrama de clases:
 Identificar las cosas que los usuarios o programadores utilizan para describir el problema o la solución: cada 
 una de ellas será una abstracción
 Identificar las responsabilidades de cada abstracción definiéndolas claramente y repartiéndolas de forma pareja
-Proporcionar a cada clase los atributos y operaciones 	necesarios para cumplir esas responsabilidades
+Proporcionar a cada clase los atributos y operaciones necesarios para cumplir esas responsabilidades
 
 Uml es un lenguaje unificado de modelado, sirve para visualizar un modelo explicito, especificar, es decir para
 construir modelos precisos, no ambiguos y completos, construir, puede conectarse directamente con una gran 
@@ -146,3 +157,31 @@ Un caso de uso es una herramienta que se utiliza para describir todas las varian
 del sistema al interactuar con un usuario ya sea si se interactúa de manera correcta, y todos las posibles 
 variantes por errores que puede llegar a tener por el mal uso de esta parte. Como informacion, necesita 
 conocer al actor y la parte del sistema que se va a probar
+
+Relacion pruebas de aceptacion-eficiencia-correccion
+Basicamente las pruebas de aceptacion se construyen para ver si el sistema cumple con estos requisitos, es decir
+se realizan pruebas funcionales para corroborar que se cumpla con la correccion y de desempeño para cumplir con
+la eficiencia
+Relacion conversion de bases de datos-instalacion
+Ambos son actividades finales del ciclo de vida estructurado, y por lo tanto una depende de la otra. Una vez se
+hayan terminado las demas actividades, se buscan pasar todos los datos preexistentes a una base de datos para
+asi se pueda comenzar a utilizar el sistema. Una vez finalizada esta actividad lo unico que queda es la 
+instalacion en el ambiente de destino y la capacitacion de los usuarios para que estos puedan comenzar a usarla
+Relacion mantenimiento de la especificacion-mantenibilidad
+Justamente la relacion esta en que el grado de dificultad del mantenimiento de la especificacion es directamente
+proporcional al grado de mantenibilidad que tiene el sistema
+
+Relacion clasificadores-encapsulamiento
+Seria optimo que un clasificador tenga sus caracteristicas encapsuladas para asi reducir potenciales errores 
+que podrian ocurrir.
+Relacion generalizacion-herencia-polimorfismo
+En la relacion de generalizacion el principal pilar del paradigma orientado a objetos que se utiliza es la 
+herncia, ya que por medio de esta, clases hijas reciben las caracteristicas de las clases padres. Otro de los
+pilares que utiliza esta relacion es el polimorfismo, este se utiliza cuando se tiene el mismo nombre de la 
+operacion en la clase padre como en la hija, pero el metodo que utiliza es distinto.
+Relacion clasificadores-relaciones-diagrama de clases
+En el diagrama de clases se describe la estructura de un sistema mostando los distintos clasificadore, sus atributos, 
+operaciones y la relaciones entre estos.
+
+Relacion cualquier diagrama con su tipo de diagrama
+Relacion elementos entre si
