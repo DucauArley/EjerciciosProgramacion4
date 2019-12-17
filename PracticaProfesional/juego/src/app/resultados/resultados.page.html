@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Resultados</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button (click)="irMenu()">
+          
+        </ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+ 
+
+<ion-content padding class="juego">
+
+  <ion-list>
+    <ion-list-header>Mejores Puntajes</ion-list-header>
+    <ion-item *ngFor="let pu of puntajes">
+      {{pu.usuario}}
+      {{pu.puntaje}}
+    </ion-item>
+
+  </ion-list>
+</ion-content>

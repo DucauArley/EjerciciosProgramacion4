@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-card> 
+        <ion-card-header>
+          <ion-card-title style="color: white;">Seleccione un personaje</ion-card-title>
+        </ion-card-header>
+    </ion-card>
+
+</ion-header>
+
+
+
+<ion-content>
+
+<ion-card  (click)="imagenTormenta()"> 
+  <ion-card-header>
+    <ion-card-title style="color: white;">Batman - DC</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-img src="../../assets/batman.jpg"></ion-img>
+  </ion-card-content>
+</ion-card >
+
+<ion-card (click)="imagenMaravilla()">  
+  <ion-card-header>
+    <ion-card-title style="color: white;">Iron Man - Marvel</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-img src="../../assets/ironman.jpg"></ion-img>
+  </ion-card-content>
+</ion-card>
+
+
+
+</ion-content>

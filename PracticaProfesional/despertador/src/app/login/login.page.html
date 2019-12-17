@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar color="warning">
+      <ion-title>Iniciar sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+      
+
+      <ion-col text-center>
+        <div><img src="../../assets/imagenes/usuario.png" height="45%" width="60%"></div>
+        <ion-button size="large" color="warning" (click)="onLogin()">Entrar</ion-button>
+      <ion-button size="large" color="warning" routerLink="/register">Registrarse</ion-button>
+      </ion-col>
+      <br>
+      <ion-label>
+        Usuario
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      <ion-label>
+        Contraseña
+      </ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+
+    <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="warning" (click)="LoginTester()" id="bPor">
+        Tester
+      </ion-fab-button>
+    </ion-fab>
+  
+    <ion-fab  vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button color="warning" (click)="LoginAdmin()" id="bIng">
+          Admin
+        </ion-fab-button>
+      </ion-fab>
+  
+      <ion-fab  vertical="bottom" horizontal="start" slot="fixed">
+          <ion-fab-button color="warning" (click)="LoginInvitado()" id="bEsp" class="borde">
+            Invitado
+          </ion-fab-button>
+        </ion-fab>
+
+        <ion-fab  vertical="center" horizontal="start" slot="fixed">
+          <ion-fab-button color="warning" (click)="LoginUsuario()" id="bEsp" class="borde">
+            Usuario
+          </ion-fab-button>
+        </ion-fab>
+
+        <ion-fab  vertical="center" horizontal="end" slot="fixed">
+          <ion-fab-button color="warning" (click)="LoginAnonimo()" id="bEsp" class="borde">
+           Anonimo
+          </ion-fab-button>
+        </ion-fab>
+
+  </ion-content>
+  

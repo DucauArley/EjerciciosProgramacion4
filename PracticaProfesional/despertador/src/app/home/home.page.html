@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title color="light">
+      <p size="large" (click)="onLogout()">Salir</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label position="floating">Distancia Mínima</ion-label><br>
+    <input type="number" name="dis" class="ok" id="dis" min="1" max="10" pattern="^[0-9]+" [(ngModel)]="distanciaMinima">
+  </ion-item>
+
+  <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
+    <ion-item>
+    
+      <ion-label position="floating">Destino</ion-label><br>
+
+      <input class="input" #autoCompleteInput formControlName="destination" [(ngModel)]="pasarDireccion" />
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!directionForm.valid">Preparar Alarma</ion-button>
+  </form>
+
+
+  <div #mapElement class="map"></div>
+
+  <div id="infowindow-content">
+    <img src="" width="16" height="16" id="place-icon">
+    <span id="place-name"  class="title"></span><br>
+    <span id="place-address"></span>
+  </div>
+
+  <ion-list>
+    <ion-list-header>Rutas previas</ion-list-header>
+    <ion-item *ngFor="let ru of rutas">
+      {{ru.fecha}}
+      {{ru.usuario}}
+      Distancia: {{ru.distancia}} metros
+      <ion-button clear item-end (click)="reescribirRuta(ru.origen, ru.destino)">Ver Ruta</ion-button>
+    </ion-item>
+
+  </ion-list>
+
+  <form class="contenedor" id="form" *ngIf="alert">
+
+    <h2>Error:</h2>
+    
+      <label>{{mensaje}}</label><br>
+  
+    <ion-button color="success" (click)="alert = false">OK</ion-button>
+  
+  </form>
+
+</ion-content>
