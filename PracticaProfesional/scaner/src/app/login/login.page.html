@@ -1,13 +1,14 @@
+<app-spin *ngIf="showSpinner"></app-spin>
 <ion-header>
     <ion-toolbar color="success">
-      <ion-title>Login</ion-title>
+      <ion-title>Iniciar sesión</ion-title>
     </ion-toolbar>
   </ion-header>
   
 <ion-content padding class="background">
 
     <ion-label style="color: white;">
-      <h1>Email</h1>
+      <h1>Usuario</h1>
     </ion-label>
     <ion-item>
       <ion-input type="text" [(ngModel)]="user.email"></ion-input>
@@ -20,7 +21,7 @@
     </ion-item>
     
     <ion-row justify-content-center>
-      <ion-button  size="large" color="success" (click)="onLogin()">Login</ion-button>
+      <ion-button  size="large" color="success" (click)="onLogin()">Entrar</ion-button>
       <ion-button size="large" color="success" routerLink="/register">Registrarse</ion-button>
     </ion-row>
 

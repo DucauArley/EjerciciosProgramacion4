@@ -19,6 +19,7 @@ import { timer } from 'rxjs';
 })
 export class HomePage {
 
+  public spinner:boolean = true;
   public activo: boolean = false;
   public audio: any;
   public data: any;
@@ -27,6 +28,10 @@ export class HomePage {
   constructor(private authSvc: AuthService, private router: Router, private afAuth: AngularFireAuth,
      private flashlight: Flashlight, private deviceMotion: DeviceMotion, private vibration: Vibration) 
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+
     this.activo = false;
     this.audio = new Audio();
   }
@@ -50,11 +55,12 @@ export class HomePage {
     this.subscription = this.deviceMotion.watchAcceleration({frequency:200}).subscribe((acceleration: DeviceMotionAccelerationData) => {
       this.data = acceleration;
 
-      if((this.data.x > 5.0 || this.data.x < -5.0) && (seMueveXD == false || seMueveXI == false))
+      if((this.data.x > 5.0 || this.data.x < -5.0))
       {
         if(seMueveXD == false && this.data.x > 5.0)
         {
           seMueveXD = true;
+          seMueveXI = false;
           this.audio.src = '../../assets/audios/Meroban.m4a';
 
           if(this.audio.paused)
@@ -68,6 +74,7 @@ export class HomePage {
         if(seMueveXI == false && this.data.x < -5.0)
         {
           seMueveXI = true;
+          seMueveXD = false;
           this.audio.src = '../../assets/audios/NoToques.m4a';
 
           if(this.audio.paused)
@@ -86,20 +93,20 @@ export class HomePage {
         seMueveY = true;
         this.flashlight.switchOn();
 
+        this.audio.src = '../../assets/audios/alarmaFabrica.mp3';
+         
+        this.audio.load();
+
+        this.audio.play();
+
         timer(5000).subscribe(() => 
         {
-          this.audio.src = '../../assets/audios/alarmaFabrica.mp3';
-         
-          this.audio.load();
-
-          this.audio.play();
-
           this.flashlight.switchOff();
         });
 
       }
 
-      if((this.data.x < 5.0 && this.data.y < 5.0) && seMueveY == true && seMueveXD == true && seMueveXI == true)
+      if((this.data.x < 2.0 && this.data.y < 2.0) && seMueveY == true && (seMueveXD == true || seMueveXI == true))
       {
         seMueveXD = false;
         seMueveXI = false;

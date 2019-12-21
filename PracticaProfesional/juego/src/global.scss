@@ -14,6 +14,24 @@
     font-family: 'Comic Sans MS';
 }
 
+.slidein {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+  
+  to {
+   margin-left:0%;
+   width:100%;
+ }
+}
 
 .toastOk{
     --background:#67AB6A;
@@ -43,6 +61,24 @@
     --width: 80%;
 }
 
+.spin{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+ion-spinner {
+  width: 48px;
+  height: 48px;
+  color: white;
+  stroke: white;
+  fill: white;
+}
+
 .splash {
     position: absolute;
     width: 100%;
@@ -51,8 +87,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(151, 240, 148);
-    
+    background: #989aa2;
 }
 
 

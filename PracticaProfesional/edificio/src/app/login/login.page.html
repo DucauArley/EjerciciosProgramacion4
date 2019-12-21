@@ -1,6 +1,11 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="dots"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
 <ion-header>
     <ion-toolbar color="danger">
-      <ion-title>Login</ion-title>
+      <ion-title>Iniciar sesión</ion-title>
     </ion-toolbar>
   </ion-header>
   
@@ -12,7 +17,7 @@
 
 
       <ion-label style="color: white;">
-       <h1>Email</h1>
+       <h1>Usuario</h1>
       </ion-label>
       <ion-input type="text" [(ngModel)]="user.email"></ion-input>
       <ion-label style="color: white;">
@@ -20,7 +25,7 @@
       </ion-label>
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
   
-      <ion-button size="large" color="danger" (click)="onLogin()">Login</ion-button>
+      <ion-button size="large" color="danger" (click)="onLogin()">Entrar</ion-button>
       <ion-button size="large" color="danger" routerLink="/register">Registrarse</ion-button>
 
 

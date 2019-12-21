@@ -11,6 +11,7 @@ import { ColoresPage } from '../colores/colores.page';
 })
 export class HomePage {
 
+  public spinner:boolean = true;
   public nombre:string;
   public apellido:string;
   public mostrar:boolean;
@@ -21,6 +22,10 @@ export class HomePage {
 
   constructor(private authSvc: AuthService, private router: Router, private afAuth: AngularFireAuth) 
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+
     this.cambiarNombres(4);
   }
 

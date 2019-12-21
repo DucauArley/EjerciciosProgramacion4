@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./colores.page.scss'],
 })
 export class ColoresPage implements OnInit {
-
+  public spinner:boolean = true;
   public audio: any;
   public ingles: string = "0";
   public español: string = "0";
@@ -15,6 +15,10 @@ export class ColoresPage implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) 
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+
     this.route.queryParams.subscribe(params=>
       {
         this.ingles = params.ingles;

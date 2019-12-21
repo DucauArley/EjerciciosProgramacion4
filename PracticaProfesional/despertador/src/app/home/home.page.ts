@@ -26,6 +26,7 @@ export class HomePage {
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
   directionForm: FormGroup;
+  public spinner:boolean = true;
   public rutaTrackeada = [];
   public pasarDireccion:string;
   public distanciaMinima: number;
@@ -36,6 +37,8 @@ export class HomePage {
   public email:string = firebase.auth().currentUser.email;
   public alert:boolean = false;
   public mensaje:string = "mi vieja mula ya no es lo que era";
+  public long;
+  public lati;
 
   currentLocation: any = {
     lat: 0,
@@ -45,26 +48,33 @@ export class HomePage {
   constructor(private authSvc: AuthService, private router: Router, private afAuth: AngularFireAuth,
     private fb: FormBuilder, public geolocation: Geolocation, private fireStore: AngularFirestore, private datePipe: DatePipe) 
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
 
-    /*Falta arreglar lo que se duplican las rutas y lo de mostrar las rutas para cada usuario, y poner
-    una validacion o algo para la distancia, que no te deje activar la alarma si no esta la distancia
-    escrita que es izi*/
-    this.rutas = new Array<any>();
-    let routes:any = 0
-    routes = this.fireStore.collection("rutas").valueChanges()
-    
-    routes.forEach(tur=>
+    let routes = this.fireStore.collection("rutas").snapshotChanges().subscribe(res=>
       {
-        tur.forEach(item=>
-          {
-            this.rutas.push(item);
-          })
-      });
+        this.tomarRutas(res);
+      })
 
     this.audio = new Audio();
     this.createDirectionForm();
   }
 
+  tomarRutas(res)
+  {
+    this.rutas = new Array<any>();
+    let compare;
+
+    res.forEach(item => 
+      {
+        compare = item.payload.doc.data();
+        if(compare["usuario"] == this.email)
+        {
+          this.rutas.push(item.payload.doc.data());
+        }
+    });
+  }
 
   guardarRuta(origen, destino)
   {
@@ -195,10 +205,28 @@ export class HomePage {
 
   startTracking()
   {
-    if(this.distanciaMinima + 50 > this.distanciaTotal)
-    {
-      this.alarma();
-    }
+    let options = {
+      enableHighAccuracy: true,
+      timeout: 8000,
+      maximumAge: 7000,
+    };
+
+    let watch = this.geolocation.watchPosition(options);
+    let suscripcion = watch.subscribe((data) => {
+      this.lati = data.coords.latitude;
+      this.long = data.coords.longitude;
+
+      let lugar =  new google.maps.LatLng(data.coords.latitude, data.coords.longitude);
+      var myLatLngDestiny = new google.maps.LatLng(this.destinardo.pa.g, this.destinardo.ka.h); 
+
+      this.distanciaTotal=google.maps.geometry.spherical.computeDistanceBetween(lugar , myLatLngDestiny);
+
+      if(this.distanciaMinima + 50 > this.distanciaTotal)
+      {
+        this.alarma(); //tengo que poner algo que rompa el watch
+        suscripcion.unsubscribe();
+      }
+    });
   }
 
   reescribirRuta(origen, destino)

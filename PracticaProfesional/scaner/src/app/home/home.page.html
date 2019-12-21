@@ -1,3 +1,6 @@
+<app-spin *ngIf="showSpinner"></app-spin>
+
+
 <ion-header>
   <ion-toolbar color="success">
     <ion-title color="light">
@@ -26,11 +29,11 @@
     </ion-fab> -->
   
   
-    <ion-card style="height: 400px;">
+    <ion-card style="height: 400px; background-color:  rgba(0, 0, 0, 0.7);;">
         <!-- <ion-card (click)="sacarFoto('linda')"> -->
       <ion-card-header>
-        <ion-card-title><h1 style="font-size: 100px;">{{creditoTotal}}</h1></ion-card-title>
-        <ion-card-subtitle><h1 style="font-size: 50px;">Creditos Totales </h1></ion-card-subtitle>
+        <ion-card-title><h1 style="font-size: 100px; color: white;">{{creditoTotal}}</h1></ion-card-title>
+        <ion-card-subtitle><h1 style="font-size: 50px; color:white">Créditos Totales </h1></ion-card-subtitle>
       </ion-card-header>
   
       
@@ -48,10 +51,20 @@
     <ion-card style="background-color:limegreen;">
         <!-- <ion-card (click)="sacarFoto('linda')"> -->
       <ion-card-header>
-        <ion-card-title (click)="scannear()" color="light"> Cargar Credito</ion-card-title>
+        <ion-card-title (click)="scannear()" color="light"> Cargar Crédito</ion-card-title>
       </ion-card-header>
     </ion-card>
   
     <ion-button color="danger" (click)="borrar()">Borrar</ion-button>
+
+    <form class="contenedor" id="form" *ngIf="alert">
+
+      <h2>Error:</h2>
+      
+        <label>{{mensaje}}</label><br>
+    
+      <ion-button color="success" (click)="alert = false">OK</ion-button>
+    
+    </form>
 
 </ion-content>

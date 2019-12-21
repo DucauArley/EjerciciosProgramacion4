@@ -12,11 +12,14 @@ import { Usuario } from '../clases/usuario';
 })
 export class LoginPage implements OnInit {
 
+  public spinner:boolean = true;
   user: User = new User();
 
   constructor(private authSvc: AuthService, private router: Router, public alertController: AlertController)
   {
-
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
   }
 
   ngOnInit() {

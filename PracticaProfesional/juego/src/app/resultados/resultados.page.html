@@ -1,6 +1,11 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="crescent"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
 <ion-header>
     <ion-toolbar>
-      <ion-title>Resultados</ion-title>
+      <ion-title style="color: white;">Resultados</ion-title>
       <ion-buttons slot="start">
         <ion-back-button (click)="irMenu()">
           
@@ -8,8 +13,6 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-
-
  
 
 <ion-content padding class="juego">

@@ -1,3 +1,9 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="dots"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
+
 <ion-header>
   <ion-toolbar color="danger">
     <ion-button (click)="sacarFoto(tipoImg)">Sacar Foto</ion-button>

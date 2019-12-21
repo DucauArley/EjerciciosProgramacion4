@@ -6,8 +6,6 @@ import { AuthService } from '../services/auth.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import * as firebase from 'firebase';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
-import { AlertController } from '@ionic/angular'; 
-
 
 @Component({
   selector: 'app-home',
@@ -18,17 +16,27 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
 
   public creditoTotal:number = 0;
+  public creditoBruto:number = 0;
   public codigoScaneado:string = "";
   public cod1: number = 0;
   public cod2: number = 0;
   public cod3: number = 0;
+  public mensaje:string = "mi vieja mula ya no es lo que era";
+  public alert:boolean = false;
+  public showSpinner:boolean = true;
 
   constructor(private afAuth: AngularFireAuth, private authSvc: AuthService, private router: Router,
-     private barcodeScanner: BarcodeScanner, private ngZone: NgZone, public alertController: AlertController)
+     private barcodeScanner: BarcodeScanner, private ngZone: NgZone)
      {}
 
-  ngOnInit()
+  ngOnInit() 
   {
+    this.showSpinner = true;
+
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 3000);
+
     this.leer();
   }
 
@@ -44,10 +52,10 @@ export class HomePage {
     this.barcodeScanner.scan().then(data =>
       {
         this.codigoScaneado = data.text;
-        this.cargar();      
-        console.log(this.codigoScaneado); 
+       
+          this.cargar();      
+          console.log(this.codigoScaneado); 
       })
-
   }
 
   cargar()
@@ -62,7 +70,8 @@ export class HomePage {
         }
         else
         {
-          this.alerta("Ya se uso ese codigo");
+          this.mensaje = "Ya se uso ese codigo";
+          this.alert = true;
         }
         break;
       case 'ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ':
@@ -73,7 +82,8 @@ export class HomePage {
         }
         else
         {
-          this.alerta("Ya se uso ese codigo");
+          this.mensaje = "Ya se uso ese codigo";
+          this.alert = true;
         }
         break;
       case '8c95def646b6127282ed50454b73240300dccabc':
@@ -84,19 +94,32 @@ export class HomePage {
         }
         else
         {
-          this.alerta("Ya se uso ese codigo");
+          this.mensaje = "Ya se uso ese codigo";
+          this.alert = true;
         }
         break;
       default:
-        this.alerta("NO ES UN CODIGO VALIDO!!!");
+        this.mensaje = "NO ES UN CODIGO VALIDO!!!";
+        this.alert = true;
     }
     
-    this.meter();
+    if(this.creditoTotal > 160)
+    {
+      this.creditoTotal = this.creditoBruto;
+      this.mensaje = "Ya se uso ese codigo";
+      this.alert = true;
+    }
+    else
+    {
+      this.meter();
+    }
+
   }
 
   borrar()
   {
     this.creditoTotal = 0;
+    this.creditoBruto = this.creditoTotal;
     this.cod1 = 0;
     this.cod2 = 0;
     this.cod3 = 0;
@@ -112,6 +135,7 @@ export class HomePage {
 
     algo.on('value', (snapshot) => {
       this.creditoTotal = snapshot.val();//Da los creditos
+      this.creditoBruto = this.creditoTotal;
     });
   
   }
@@ -127,22 +151,5 @@ export class HomePage {
     });
 
   }
-
-  async alerta(mensaje:string)
-  {
-    const alert = await this.alertController.create({
-      header: 'Error',
-      subHeader: mensaje,
-      buttons: [
-        {
-          text: 'OK',
-          cssClass:'secondary'
-      }]
-    });
-
-    await alert.present();
-  }
-
-
 
 }

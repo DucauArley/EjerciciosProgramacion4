@@ -9,7 +9,14 @@ import { Router } from '@angular/router';
 })
 export class MenuPage implements OnInit {
 
-  constructor(private js: JuegoService, private router: Router) { }
+  public spinner:boolean = true;
+
+  constructor(private js: JuegoService, private router: Router)
+  {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+  }
 
   ngOnInit() {
   }
@@ -24,6 +31,12 @@ export class MenuPage implements OnInit {
   {
     this.js.getPersonaje("assets/batman_fly.png");
     this.router.navigateByUrl('juego');
+  }
+
+  onLogout()
+  {
+    console.log("Logout"); 
+    this.router.navigateByUrl('/login'); 
   }
 
 }

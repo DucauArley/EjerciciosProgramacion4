@@ -1,0 +1,56 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="dots"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title color="light">
+      <p size="large" (click)="onLogout()">Salir</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="flex-v">
+    <ul class="flex-container center-horizontal">
+    <li class="flex-item" *ngFor="let pa of jugadores">
+      <div class="flex-h height-100">
+      <div class="width-100 flex-v">
+        <!-- resultados -->
+        <div class="flex-v" style="margin-bottom:5px;">
+            <div class="flex-h">
+                <div class="width-100">
+                    <div class="resultado">
+                        {{pa.jugador}}
+                    </div>
+
+                </div>
+                <div class="center-horizontal center-vertical">
+                    :
+                </div>
+                <div class="width-100">
+                    <div class="resultado">
+                        {{pa.partidos}}
+                    </div>
+                </div>
+            </div>
+            <div class="flex-h">
+                <div class="width-100">
+                    Jugador
+                </div>
+                <div class="width-100">
+                    Partidos Ganados
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </li>
+  </ul>
+</div>
+
+
+
+</ion-content>

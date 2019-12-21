@@ -37,3 +37,58 @@
     --ion-color-warning-shade: #0a7100;
     --ion-color-warning-tint: #238d1a;
   }
+
+  .scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+  .spin{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+ }
+ ion-spinner {
+    width: 48px;
+    height: 48px;
+    color: white;
+    stroke: white;
+    fill: white;
+ }
+
+  .splash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0cd1e8;
+}
+
+  @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }

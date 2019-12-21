@@ -11,13 +11,15 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  
+  public spinner:boolean = true;
   user: User = new User();
   public miSelect;
 
   constructor(private authSvc: AuthService, private router: Router, public alertController: AlertController)
   {
-
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
   }
 
   ngOnInit() {

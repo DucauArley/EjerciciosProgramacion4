@@ -1,13 +1,15 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="crescent"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
 <ion-header>
-    <ion-card> 
-        <ion-card-header>
-          <ion-card-title style="color: white;">Seleccione un personaje</ion-card-title>
-        </ion-card-header>
-    </ion-card>
-
+  <ion-toolbar color="medium"> 
+    <ion-title color="light">
+      <p size="large" (click)="onLogout()">Salir</p>
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
-
-
 
 <ion-content>
 

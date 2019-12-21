@@ -1,5 +1,10 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="lines"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
 <ion-header>
-  <ion-toolbar color="warning">
+  <ion-toolbar color="secondary">
     <ion-title color="light">
       <p size="large" (click)="onLogout()">Salir</p>
     </ion-title>
@@ -20,7 +25,7 @@
 
       <input class="input" #autoCompleteInput formControlName="destination" [(ngModel)]="pasarDireccion" />
     </ion-item>
-    <ion-button expand="full" type="submit" [disabled]="!directionForm.valid">Preparar Alarma</ion-button>
+    <ion-button expand="full" type="submit" color="secondary" [disabled]="!directionForm.valid">Preparar Alarma</ion-button>
   </form>
 
 
@@ -38,7 +43,7 @@
       {{ru.fecha}}
       {{ru.usuario}}
       Distancia: {{ru.distancia}} metros
-      <ion-button clear item-end (click)="reescribirRuta(ru.origen, ru.destino)">Ver Ruta</ion-button>
+      <ion-button clear item-end (click)="reescribirRuta(ru.origen, ru.destino)" color="secondary">Ver Ruta</ion-button>
     </ion-item>
 
   </ion-list>

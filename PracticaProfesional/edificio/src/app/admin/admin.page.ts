@@ -13,6 +13,7 @@ export class AdminPage implements OnInit {
   @ViewChild('barCanvas', {static: false}) barCanvas: ElementRef;
   @ViewChild('doughnutCanvas', {static: false}) doughnutCanvas: ElementRef;
 
+  public spinner:boolean = true;
   private barChart: Chart;
   private doughnutChart: Chart;
   private lineChart: Chart;
@@ -23,6 +24,10 @@ export class AdminPage implements OnInit {
 
   constructor(private route: ActivatedRoute)
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+
   }
 
   ngOnInit() {

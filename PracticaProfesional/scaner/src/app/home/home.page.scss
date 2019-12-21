@@ -10,3 +10,56 @@ ion-content.background
 {
     --background: url("../../assets/imagenes/fondo.jpg")0 0/100% 100% no-repeat;
 }
+form {
+    padding: 10px;
+    background:#141D3F;
+}
+.ok{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.error
+{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+.contenedor
+{
+	position: fixed;
+	width: 50%;
+	border-radius: 5px;
+	background-color: lightgrey;
+	padding: 20px;
+	box-sizing: border-box;
+	margin: 20px auto;
+	left: 25%;
+	top: 200px;
+	animation-name: aparecer;
+	animation-duration: 2s;
+}
+@keyframes aparecer
+{
+	from{opacity: 0}
+	to{opacity: 1}
+}
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  input[type="radio"]{
+    vertical-align: baseline;
+ }

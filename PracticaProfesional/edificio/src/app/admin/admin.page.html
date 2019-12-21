@@ -1,3 +1,8 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="dots"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
 <ion-header>
   <ion-toolbar color="danger">
     <ion-title>Admin</ion-title>
@@ -24,5 +29,5 @@
     </ion-card-content>
   </ion-card>
 
-<ion-button size="large" routerLink="/">Volver a la pagina principal</ion-button>
+<ion-button size="large" routerLink="/" color="danger">Volver a la pagina principal</ion-button>
 </ion-content>

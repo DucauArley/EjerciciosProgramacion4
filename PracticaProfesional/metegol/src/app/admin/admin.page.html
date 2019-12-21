@@ -1,0 +1,102 @@
+<div class="spin" *ngIf="spinner">
+    <ion-spinner name="dots"></ion-spinner>
+    <h2 style="color: white;">Cargando...</h2>
+  </div>  
+
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title color="light">
+      <p size="large" (click)="onLogout()">Salir</p>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="height-100 panel">
+    <ion-row justify-content-center align-items-center>
+        <ion-col style="padding:0;" class="fila-image-container">
+          <img id="imagen" class="fila-image" src={{base64Image}} style="padding:0; border: 2px solid white;">
+        </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:1em;">
+        <ion-col class="equipo-title center-horizontal">
+            Equipo 1
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label floating>Jugador Uno:</ion-label>
+                <ion-input type="text" [(ngModel)]="jugadorUno"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="equipo-title center-horizontal">
+            Equipo 2
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label floating>Jugador Dos:</ion-label>
+                <ion-input type="text" [(ngModel)]="jugadorDos"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row class="resultados-container">
+        <ion-col class="flex-h width-50" style="padding:0;">
+            <div class="width-50 flex-v center-horizontal center-vertical">
+                <div class="resultado-icon" (click)="masEquipoUnoClick(equipoUnoGoles)">
+                    <ion-icon name="add"></ion-icon>
+                </div>
+                <div class="resultado-icon" (click)="menosEquipoUnoClick(equipoUnoGoles)">
+                    <ion-icon name="remove"></ion-icon>
+                </div>
+            </div>
+            <div class="width-50 resultado">
+                {{equipoUnoGoles}}
+            </div>
+        </ion-col>
+        <ion-col class="width-10 center-horizontal center-vertical resultado-divisor" style="padding:0;">
+            -
+        </ion-col>
+        <ion-col class="flex-h width-50" style="padding:0;">
+            <div class="width-50 resultado">
+                {{equipoDosGoles}}
+            </div>
+            <div class="width-50 flex-v center-horizontal center-vertical">
+                <div class="resultado-icon" (click)="masEquipoDosClick(equipoDosGoles)">
+                    <ion-icon name="add"></ion-icon>
+                </div>
+                <div class="resultado-icon" (click)="menosEquipoDosClick(equipoDosGoles)">
+                    <ion-icon name="remove"></ion-icon>
+                </div>
+            </div>
+
+        </ion-col>
+    </ion-row>
+
+    <ion-row no-padding no-margin>
+        <ion-col col-md-6 no-padding no-margin>
+            <ion-button color="warning" (click)="guardarPartido()">Guardar</ion-button>
+        </ion-col>
+        <ion-col col-md-6 no-padding no-margin>
+            <ion-button color="warning" (click)="cargarFoto()">Cargar Foto</ion-button>
+        </ion-col>
+    </ion-row>
+
+</div>
+
+<form class="contenedor" id="form" *ngIf="alert">
+
+    <h2>Error:</h2>
+    
+      <label>{{mensaje}}</label><br>
+  
+    <ion-button color="success" (click)="alert = false">OK</ion-button>
+  
+</form>
+
+</ion-content>

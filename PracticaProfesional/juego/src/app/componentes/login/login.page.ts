@@ -17,6 +17,7 @@ import { ToastController, NavController, ModalController } from '@ionic/angular'
 })
 export class LoginPage implements OnInit {
 
+  public spinner:boolean = true;
   email: string;
   password: string;
 
@@ -28,7 +29,11 @@ export class LoginPage implements OnInit {
     public toastController: ToastController
    //private formBuilder: FormBuilder)
   )
-    { }
+  {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+  }
 
   ngOnInit() {
   }

@@ -8,7 +8,7 @@ import { Base64 } from '@ionic-native/base64/ngx';
 import { FirebaseStorage } from '@angular/fire';
 import * as firebase from 'firebase';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +18,7 @@ import { DatePipe } from '@angular/common'
 })
 export class HomePage {
 
+  public spinner:boolean = true;
   public nombre:string;
   public apellido:string;
   public mostrar:boolean;
@@ -27,6 +28,9 @@ export class HomePage {
   constructor(private authSvc: AuthService, private router: Router, private afAuth: AngularFireAuth, 
     private camera: Camera, private base64: Base64, public datepipe: DatePipe) 
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
 
   }
 

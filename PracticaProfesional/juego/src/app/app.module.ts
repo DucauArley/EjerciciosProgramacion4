@@ -17,6 +17,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
 import { ChatComponent } from './componentes/chat/chat.component';
+import { SplashComponent } from './componentes/splash/splash.component';
 
 import { FormsModule } from "@angular/forms";
 
@@ -27,7 +28,7 @@ import { Flashlight } from '@ionic-native/flashlight/ngx';
 import { SplashPage } from './splash/splash.page';
 
 @NgModule({
-  declarations: [AppComponent, ChatComponent],
+  declarations: [AppComponent, ChatComponent, SplashComponent],
   entryComponents: [ ChatComponent ],
   imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

@@ -15,6 +15,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 })
 export class ResultadosPage implements OnInit {
   public userProfile: any;
+  public spinner:boolean = true;
   filename:string;
   students: any;
   foto:string;
@@ -36,20 +37,30 @@ export class ResultadosPage implements OnInit {
   constructor(private crudService: ChatsService,private user:AuthService, private router: Router,
     private fireStore: AngularFirestore)
   { 
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+
     this.puntajesTotales = new Array<any>();
     this.puntajes = new Array<any>();
 
-    let punt:any = 0
-    punt = this.fireStore.collection("puntajes").valueChanges()
-    
-    punt.forEach(tur=>
+    let punt = this.fireStore.collection("puntajes").snapshotChanges().subscribe(res=>
       {
-        tur.forEach(item=>
-          {
-            this.puntajesTotales.push(item);
-          })
+        this.tomarPuntajes(res);
       });
 
+  }
+
+  tomarPuntajes(res)
+  {
+    this.puntajesTotales = new Array<any>();
+    let compare;
+
+    res.forEach(item => 
+      {
+        this.puntajesTotales.push(item.payload.doc.data());
+    });
+ 
     setTimeout(() => {
       this.puntajesTotales.forEach(pun=>
         {
@@ -71,41 +82,16 @@ export class ResultadosPage implements OnInit {
               }
             }
           }
-        })
+        });
 
         this.puntajes.push(this.p1);
         this.puntajes.push(this.p2);
         this.puntajes.push(this.p3);
     }, 1000);
-
   }
 
   ngOnInit() {
-    this.crudService
-    .getUserProfile()
-    .get()
-    .then( userProfileSnapshot => {
-      this.userProfile = userProfileSnapshot.data();
-       console.log(this.userProfile);
-      this.name = userProfileSnapshot.data().name;
-//this.perfil= userProfileSnapshot.data().perfil;
-    });
-    
-    this.crudService.read_Students().subscribe(data => {
-
-      this.students = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          isEdit: false,
-          nombre: e.payload.doc.data()['nombre'],
-          tiempo: e.payload.doc.data()['tiempo'],
-         // perfil: e.payload.doc.data()['perfil'],
-
-        };
-      })
-      console.log(this.students);
-
-    });
+  
   }
 
   irMenu()

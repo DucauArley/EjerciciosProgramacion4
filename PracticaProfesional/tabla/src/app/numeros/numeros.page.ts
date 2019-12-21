@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NumerosPage implements OnInit {
 
+  public spinner:boolean = true;
   public audio: any;
   public ingles: string = "0";
   public español: string = "0";
@@ -15,6 +16,10 @@ export class NumerosPage implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) 
   {
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
+
     this.route.queryParams.subscribe(params=>
       {
         console.log(params);

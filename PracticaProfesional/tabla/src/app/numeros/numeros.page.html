@@ -1,3 +1,8 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="bubbles"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>numeros</ion-title>
@@ -6,28 +11,13 @@
 
 <ion-content class="background">
 
-    <ion-row no-padding no-margin>
-        <ion-col col-md-6 no-padding no-margin>
-          <img src="../../assets/imagenes/uno.jpg" no-margin no-padding class class="imagenes" (click)="reproducirAudio(1)">
-        </ion-col>
-        <ion-col col-md-6 no-padding no-margin>
-          <img src="../../assets/imagenes/dos.jpg" class="imagenes" (click)="reproducirAudio(2)">
-        </ion-col>
-    </ion-row>
-    <ion-row no-padding no-margin>
-      <ion-col col-md-6 no-padding no-margin>
-        <img src="../../assets/imagenes/tres.png" class="imagenes" (click)="reproducirAudio(3)">
-      </ion-col>
-      <ion-col col-md-6 no-padding no-margin> 
-        <img src="../../assets/imagenes/cuatro.png" class="imagenes" (click)="reproducirAudio(4)">
-      </ion-col>
-    </ion-row>
-    <ion-row no-padding no-margin>
-      <ion-col col-md-12 no-padding no-margin>
-        <img src="../../assets/imagenes/cinco.png" style="height: 50%; width: 100%;" (click)="reproducirAudio(5)">
-      </ion-col>
-    </ion-row>
-
+    <ion-row>
+    <img src="../../assets/imagenes/uno.jpg" class="imagenes" (click)="reproducirAudio(1)">
+    <img src="../../assets/imagenes/dos.jpg" class="imagenes" (click)="reproducirAudio(2)">
+    <img src="../../assets/imagenes/tres.png" class="imagenes" (click)="reproducirAudio(3)">
+    <img src="../../assets/imagenes/cuatro.png" class="imagenes" (click)="reproducirAudio(4)">  
+    <img src="../../assets/imagenes/cinco.png" class="imagenes" (click)="reproducirAudio(5)">
+  </ion-row>
 
     <ion-fab  vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button (click)="cambiarNombres(3)" id="bPorN">

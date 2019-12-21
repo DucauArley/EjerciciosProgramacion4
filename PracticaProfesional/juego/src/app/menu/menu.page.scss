@@ -6,6 +6,10 @@ ion-card{
 
 }
 
+ion-content
+{
+    --background: url("../../assets/marvel-thanos.jpg")0 0/100% 100% no-repeat;
+}
 ion-card-title{
     color: rgb(26, 25, 25);
    // font-family: "Latin Modern Roman 10";

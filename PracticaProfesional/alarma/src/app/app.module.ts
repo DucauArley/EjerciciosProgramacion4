@@ -12,9 +12,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SplashComponent } from './componentes/splash/splash.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SplashComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule],
   providers: [

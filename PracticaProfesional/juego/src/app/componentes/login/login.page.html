@@ -1,6 +1,12 @@
+<div class="spin" *ngIf="spinner">
+  <ion-spinner name="crescent"></ion-spinner>
+  <h2 style="color: white;">Cargando...</h2>
+</div>
+
+
 <ion-header>
   <ion-toolbar color="medium">
-    <ion-title text-center>Iniciar sesión</ion-title>
+    <ion-title>Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +27,7 @@
   Usuarios
 </ion-button>
 
-<p text-center routerLink="/registro">Registrarse</p>
+<ion-button color="medium" expand="block" routerLink="/registro">Registrarse</ion-button>
 
 </ion-content>
 

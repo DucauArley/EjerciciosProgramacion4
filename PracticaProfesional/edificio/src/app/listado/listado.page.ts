@@ -16,6 +16,7 @@ import { DatePipe } from '@angular/common';
 })
 export class ListadoPage implements OnInit {
 
+  public spinner:boolean = true;
   public tipoImg: string;
   public subscription: any;
   public data: any;
@@ -39,6 +40,10 @@ export class ListadoPage implements OnInit {
   constructor(private route: ActivatedRoute, private deviceMotion: DeviceMotion, private router: Router,
     private camera: Camera, public datepipe: DatePipe) 
   {
+
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
     this.imagenes = new Array<string>();
     this.imagenesUrl = new Array<string>();
     this.nombres = Array<string>();
@@ -47,10 +52,7 @@ export class ListadoPage implements OnInit {
     this.likes = new Array<number>();
     this.UltVotante = Array<string>();
     this.galleryType = 'todasFotos';
-  }
 
-  ngOnInit() 
-  {
     this.route.queryParams.subscribe(params=>
       {
         this.tipoImg = params.tipoImg;
@@ -59,8 +61,12 @@ export class ListadoPage implements OnInit {
         this.leer(this.tipoImg);
 
         console.log(this.galleryType);
-      })
+      });
 
+  }
+
+  ngOnInit() 
+  {
       this.moverSlide();
   }
 
@@ -103,10 +109,16 @@ export class ListadoPage implements OnInit {
 
       for(var data in retorno)
       {
+        this.nombres.push(retorno[data]["usuario"]);
         this.votos.push(retorno[data]["likes"]);
         this.UltVotante.push(retorno[data]["ultVoto"]);
         this.imagenes.push(data);
       }
+
+      this.nombres.reverse();
+      this.votos.reverse();
+      this.UltVotante.reverse();
+      this.imagenes.reverse();
 
       this.prueba();
     });
@@ -132,13 +144,19 @@ export class ListadoPage implements OnInit {
       {
         if(retorno[data]["usuario"] == userId)
         {
+          this.nombres.push(retorno[data]["usuario"]);
           this.votos.push(retorno[data]["likes"]);
           this.UltVotante.push(retorno[data]["ultVoto"]);
           this.imagenes.push(data);
         }
       }
 
-        this.prueba();
+      this.nombres.reverse();
+      this.votos.reverse();
+      this.UltVotante.reverse();
+      this.imagenes.reverse();
+
+      this.prueba();
     });
   }
 
@@ -149,17 +167,17 @@ export class ListadoPage implements OnInit {
 
       if(this.data.x > 5.0)
       {
-        this.slideWithNav.slidePrev(500)
+        this.slideWithNav.slideNext(500)
       }
 
       if(this.data.x < -5.0)
       {
-        this.slideWithNav.slideNext(500);
+        this.slideWithNav.slidePrev(500);
       }
 
       if(this.data.y > 9.5)
       {
-        this.router.navigate(['home']);
+        this.slideWithNav.slideTo(0, 500);
       }
 
     });
@@ -217,6 +235,7 @@ export class ListadoPage implements OnInit {
       likes: 0,
       ultVoto: ""
       });
+
     })
   }
 
@@ -253,6 +272,8 @@ export class ListadoPage implements OnInit {
       {
         this.UltVotante.push(retorno[data]["ultVoto"])
       }
+
+      this.UltVotante.reverse();
       });
     }
     else
@@ -276,6 +297,8 @@ export class ListadoPage implements OnInit {
       {
         this.UltVotante.push(retorno[data]["ultVoto"])
       }
+
+      this.UltVotante.reverse();
       });
     }
 
